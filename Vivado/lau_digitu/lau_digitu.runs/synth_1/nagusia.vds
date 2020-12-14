@@ -1,0 +1,300 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Nov 27 17:55:56 2020
+# Process ID: 4064
+# Current directory: C:/lau_digitu/lau_digitu.runs/synth_1
+# Command line: vivado.exe -log nagusia.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nagusia.tcl
+# Log file: C:/lau_digitu/lau_digitu.runs/synth_1/nagusia.vds
+# Journal file: C:/lau_digitu/lau_digitu.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source nagusia.tcl -notrace
+Command: synth_design -top nagusia -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13880 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 371.063 ; gain = 81.020
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'nagusia' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:41]
+INFO: [Synth 8-3491] module 'zazpi_seg4' declared at 'C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:34' bound to instance 'U1' of component 'zazpi_seg4' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'zazpi_seg4' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'zazpi_seg4' (1#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:41]
+INFO: [Synth 8-3491] module 'f_zat' declared at 'C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:36' bound to instance 'U2' of component 'f_zat' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'f_zat' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'f_zat' (2#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'nagusia' (3#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:41]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 420.555 ; gain = 130.512
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 420.555 ; gain = 130.512
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nagusia_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/nagusia_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 714.801 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'oraingoa_reg' in module 'zazpi_seg4'
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+INFO: [Synth 8-5544] ROM "katodo" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "anodo" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "hurrengoa" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element kont_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset |                            00001 |                              000
+                  bateko |                            00010 |                              001
+               hamarreko |                            00100 |                              010
+                 ehuneko |                            01000 |                              011
+                  milako |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'oraingoa_reg' using encoding 'one-hot' in module 'zazpi_seg4'
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module zazpi_seg4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+Module f_zat 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element U2/kont_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 730.121 ; gain = 440.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 730.121 ; gain = 440.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     9|
+|3     |LUT1   |     7|
+|4     |LUT2   |    36|
+|5     |LUT3   |     2|
+|6     |LUT4   |     4|
+|7     |LUT5   |     1|
+|8     |FDCE   |    21|
+|9     |FDPE   |     1|
+|10    |FDRE   |     1|
+|11    |IBUF   |     2|
+|12    |OBUF   |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-----------+------+
+|      |Instance |Module     |Cells |
++------+---------+-----------+------+
+|1     |top      |           |    97|
+|2     |  U1     |zazpi_seg4 |    13|
+|3     |  U2     |f_zat      |    69|
++------+---------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 749.258 ; gain = 164.969
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+24 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 751.801 ; gain = 468.715
+INFO: [Common 17-1381] The checkpoint 'C:/lau_digitu/lau_digitu.runs/synth_1/nagusia.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 751.801 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 17:56:36 2020...
