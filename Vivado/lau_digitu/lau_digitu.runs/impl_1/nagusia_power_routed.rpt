@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Fri Nov 27 17:57:44 2020
-| Host             : mlan11214p249 running 64-bit major release  (build 9200)
+| Date             : Tue Dec 15 20:44:12 2020
+| Host             : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command          : report_power -file nagusia_power_routed.rpt -pb nagusia_power_summary_routed.pb -rpx nagusia_power_routed.rpx
 | Design           : nagusia
 | Device           : xc7a35tcpg236-1
@@ -29,18 +29,18 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+-------+
-| Total On-Chip Power (W)  | 5.896 |
-| Dynamic (W)              | 5.801 |
-| Device Static (W)        | 0.096 |
-| Effective TJA (C/W)      | 5.0   |
-| Max Ambient (C)          | 55.5  |
-| Junction Temperature (C) | 54.5  |
-| Confidence Level         | Low   |
-| Setting File             | ---   |
-| Simulation Activity File | ---   |
-| Design Nets Matched      | NA    |
-+--------------------------+-------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 18.939 (Junction temp exceeded!) |
+| Dynamic (W)              | 18.516                           |
+| Device Static (W)        | 0.422                            |
+| Effective TJA (C/W)      | 5.0                              |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 119.7                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 
 
 1.1 On-Chip Components
@@ -49,16 +49,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.131 |       88 |       --- |             --- |
-|   LUT as Logic |     0.105 |       40 |     20800 |            0.19 |
+| Slice Logic    |     1.189 |      200 |       --- |             --- |
+|   LUT as Logic |     1.135 |      129 |     20800 |            0.62 |
+|   F7/F8 Muxes  |     0.021 |        8 |     32600 |            0.02 |
+|   Register     |     0.016 |       34 |     41600 |            0.08 |
 |   CARRY4       |     0.012 |        9 |      8150 |            0.11 |
-|   Register     |     0.008 |       25 |     41600 |            0.06 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.090 |       43 |       --- |             --- |
-| I/O            |     5.580 |       14 |       106 |           13.21 |
-| Static Power   |     0.096 |          |           |                 |
-| Total          |     5.896 |          |           |                 |
+|   Others       |     0.000 |        6 |       --- |             --- |
+| Signals        |     1.009 |      130 |       --- |             --- |
+| I/O            |    16.318 |       17 |       106 |           16.04 |
+| Static Power   |     0.422 |          |           |                 |
+| Total          |    18.939 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,16 +69,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.254 |       0.225 |      0.030 |
-| Vccaux    |       1.800 |     0.219 |       0.204 |      0.015 |
-| Vcco33    |       3.300 |     1.579 |       1.578 |      0.001 |
+| Vccint    |       1.000 |     2.500 |       2.210 |      0.290 |
+| Vccaux    |       1.800 |     0.644 |       0.598 |      0.047 |
+| Vcco33    |       3.300 |     4.616 |       4.615 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.008 |       0.000 |      0.008 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -132,12 +133,16 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------+-----------+
-| Name    | Power (W) |
-+---------+-----------+
-| nagusia |     5.801 |
-|   U1    |     0.055 |
-|   U2    |     0.154 |
-+---------+-----------+
++--------------+-----------+
+| Name         | Power (W) |
++--------------+-----------+
+| nagusia      |    18.516 |
+|   component1 |     1.200 |
+|   component2 |     0.140 |
+|   component4 |     0.185 |
+|   component6 |     0.175 |
+|   component7 |     0.109 |
+|   component8 |     0.360 |
++--------------+-----------+
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1606496154">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1608061297">
+  <File Type="PWROPT-DRC" Name="nagusia_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="nagusia_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="nagusia_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="nagusia_power_routed.rpx"/>
   <File Type="PA-TCL" Name="nagusia.tcl"/>
-  <File Type="INIT-TIMING" Name="nagusia_timing_summary_init.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="nagusia_methodology_drc_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="nagusia_drc_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="nagusia.hwdef"/>
   <File Type="RDI-RDI" Name="nagusia.vdi"/>
   <File Type="OPT-DCP" Name="nagusia_opt.dcp"/>
-  <File Type="OPT-HWDEF" Name="nagusia.hwdef"/>
   <File Type="OPT-DRC" Name="nagusia_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="nagusia_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="nagusia_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="nagusia_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="nagusia_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="nagusia_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="nagusia_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="nagusia.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="nagusia_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="nagusia_drc_routed.rpx"/>
   <File Type="BG-DRC" Name="nagusia.drc"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="nagusia_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="nagusia_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MSK" Name="nagusia.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="nagusia_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="nagusia_methodology_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="nagusia.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="nagusia_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="nagusia_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="nagusia_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="nagusia_route_status.rpt"/>
@@ -62,7 +62,37 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/FSTM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Mux1.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/adder_resta.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/deco_bin.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/f_zat.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

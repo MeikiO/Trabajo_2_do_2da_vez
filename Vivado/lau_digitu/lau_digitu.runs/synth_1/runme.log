@@ -14,20 +14,42 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13880 
+INFO: Helper process launched with PID 1832 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 371.063 ; gain = 81.020
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 347.789 ; gain = 78.359
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'nagusia' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:41]
-INFO: [Synth 8-3491] module 'zazpi_seg4' declared at 'C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:34' bound to instance 'U1' of component 'zazpi_seg4' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:60]
-INFO: [Synth 8-638] synthesizing module 'zazpi_seg4' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'zazpi_seg4' (1#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:41]
-INFO: [Synth 8-3491] module 'f_zat' declared at 'C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:36' bound to instance 'U2' of component 'f_zat' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:67]
-INFO: [Synth 8-638] synthesizing module 'f_zat' [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'f_zat' (2#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'nagusia' (3#1) [C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'nagusia' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:42]
+INFO: [Synth 8-3491] module 'FSTM' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/FSTM.vhd:34' bound to instance 'component1' of component 'FSTM' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'FSTM' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/FSTM.vhd:46]
+WARNING: [Synth 8-614] signal 'oraingoa' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/FSTM.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'FSTM' (1#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/FSTM.vhd:46]
+INFO: [Synth 8-3491] module 'f_zat' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:36' bound to instance 'component2' of component 'f_zat' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'f_zat' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'f_zat' (2#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:42]
+INFO: [Synth 8-3491] module 'Mux1' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/Mux1.vhd:34' bound to instance 'component3' of component 'Mux1' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:135]
+INFO: [Synth 8-638] synthesizing module 'Mux1' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/Mux1.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'Mux1' (3#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/Mux1.vhd:42]
+INFO: [Synth 8-3491] module 'adder_resta' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:36' bound to instance 'component4' of component 'adder_resta' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'adder_resta' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:45]
+WARNING: [Synth 8-614] signal 'val' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'adder_resta' (4#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:45]
+INFO: [Synth 8-3491] module 'mux2' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/mux2.vhd:34' bound to instance 'component5' of component 'mux2' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'mux2' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/mux2.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'mux2' (5#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/mux2.vhd:42]
+INFO: [Synth 8-3491] module 'deco_bin' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/deco_bin.vhd:34' bound to instance 'component6' of component 'deco_bin' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'deco_bin' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/deco_bin.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'deco_bin' (6#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/deco_bin.vhd:40]
+INFO: [Synth 8-3491] module 'deco_bin' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/deco_bin.vhd:34' bound to instance 'component7' of component 'deco_bin' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:163]
+INFO: [Synth 8-3491] module 'zazpi_seg4' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:34' bound to instance 'component8' of component 'zazpi_seg4' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'zazpi_seg4' [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:42]
+WARNING: [Synth 8-614] signal 'bin_b_d' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:55]
+WARNING: [Synth 8-614] signal 'bin_h_d' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:55]
+WARNING: [Synth 8-614] signal 'bin_b_i' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:55]
+WARNING: [Synth 8-614] signal 'bin_h_i' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'zazpi_seg4' (7#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'nagusia' (8#1) [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd:42]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 420.555 ; gain = 130.512
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 387.117 ; gain = 117.688
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -37,47 +59,63 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 420.555 ; gain = 130.512
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 387.117 ; gain = 117.688
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
-Finished Parsing XDC File [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nagusia_propImpl.xdc].
+Parsing XDC File [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'rst'. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rst'. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Designutils 20-1307] Command 'w19' is not supported in the xdc constraint file. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:57]
+CRITICAL WARNING: [Designutils 20-1307] Command 'w19' is not supported in the xdc constraint file. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:58]
+CRITICAL WARNING: [Designutils 20-1307] Command 't17' is not supported in the xdc constraint file. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:59]
+CRITICAL WARNING: [Designutils 20-1307] Command 't17' is not supported in the xdc constraint file. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'katodo[7]'. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'katodo[7]'. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nagusia_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/nagusia_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 714.801 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 667.035 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element kont_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
+WARNING: [Synth 8-6014] Unused sequential element elementu_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:54]
 INFO: [Synth 8-802] inferred FSM for state register 'oraingoa_reg' in module 'zazpi_seg4'
-WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
-INFO: [Synth 8-5544] ROM "katodo" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:50]
 INFO: [Synth 8-5544] ROM "anodo" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "hurrengoa" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element kont_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
-WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:50]
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:50]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -88,9 +126,9 @@ WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:
                   milako |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'oraingoa_reg' using encoding 'one-hot' in module 'zazpi_seg4'
-WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:49]
+WARNING: [Synth 8-6014] Unused sequential element oraingoa_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd:50]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -102,12 +140,20 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input      8 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 5     
+	   5 Input      7 Bit        Muxes := 1     
 	   5 Input      5 Bit        Muxes := 1     
 	   5 Input      4 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -115,16 +161,41 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module zazpi_seg4 
+Module FSTM 
 Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input      8 Bit        Muxes := 1     
-	   5 Input      5 Bit        Muxes := 1     
-	   5 Input      4 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module f_zat 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
+Module Mux1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 2     
+Module adder_resta 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 2     
+Module zazpi_seg4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -140,9 +211,29 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element U2/kont_reg was removed.  [C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
+WARNING: [Synth 8-6014] Unused sequential element component2/kont_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd:48]
+WARNING: [Synth 8-6014] Unused sequential element component4/elementu_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd:54]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 714.801 ; gain = 424.758
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 667.035 ; gain = 397.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+----------------------+---------------+----------------+
+|Module Name | RTL Object           | Depth x Width | Implemented As | 
++------------+----------------------+---------------+----------------+
+|deco_bin    | amartarra            | 128x7         | LUT            | 
+|deco_bin    | batekoa              | 128x7         | LUT            | 
+|nagusia     | component6/amartarra | 128x7         | LUT            | 
+|nagusia     | component6/batekoa   | 128x7         | LUT            | 
+|nagusia     | component7/amartarra | 128x7         | LUT            | 
+|nagusia     | component7/batekoa   | 128x7         | LUT            | 
++------------+----------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -154,13 +245,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 730.121 ; gain = 440.078
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 730.121 ; gain = 440.078
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 667.035 ; gain = 397.605
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -172,7 +263,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,7 +287,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -209,7 +300,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -221,25 +312,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -257,43 +348,49 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |     9|
-|3     |LUT1   |     7|
-|4     |LUT2   |    36|
-|5     |LUT3   |     2|
-|6     |LUT4   |     4|
-|7     |LUT5   |     1|
-|8     |FDCE   |    21|
-|9     |FDPE   |     1|
-|10    |FDRE   |     1|
-|11    |IBUF   |     2|
-|12    |OBUF   |    12|
+|3     |LUT1   |     8|
+|4     |LUT2   |    37|
+|5     |LUT3   |     9|
+|6     |LUT4   |    21|
+|7     |LUT5   |     4|
+|8     |LUT6   |    64|
+|9     |MUXF7  |     8|
+|10    |FDCE   |    29|
+|11    |FDPE   |     2|
+|12    |FDRE   |     3|
+|13    |IBUF   |     4|
+|14    |OBUF   |    13|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-----------+------+
-|      |Instance |Module     |Cells |
-+------+---------+-----------+------+
-|1     |top      |           |    97|
-|2     |  U1     |zazpi_seg4 |    13|
-|3     |  U2     |f_zat      |    69|
-+------+---------+-----------+------+
++------+-------------+------------+------+
+|      |Instance     |Module      |Cells |
++------+-------------+------------+------+
+|1     |top          |            |   212|
+|2     |  component1 |FSTM        |    67|
+|3     |  component2 |f_zat       |    69|
+|4     |  component4 |adder_resta |    18|
+|5     |  component6 |deco_bin    |    14|
+|6     |  component7 |deco_bin_0  |     9|
+|7     |  component8 |zazpi_seg4  |    17|
++------+-------------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 749.258 ; gain = 164.969
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 749.258 ; gain = 459.215
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 672.512 ; gain = 123.164
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 672.512 ; gain = 403.082
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-24 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+39 Infos, 18 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 751.801 ; gain = 468.715
-INFO: [Common 17-1381] The checkpoint 'C:/lau_digitu/lau_digitu.runs/synth_1/nagusia.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 751.801 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 17:56:36 2020...
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 672.512 ; gain = 411.848
+INFO: [Common 17-1381] The checkpoint 'C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.runs/synth_1/nagusia.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 672.512 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 15 20:42:38 2020...

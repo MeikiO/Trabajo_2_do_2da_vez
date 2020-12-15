@@ -34,8 +34,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity zazpi_seg4 is
     Port ( rst : in STD_LOGIC;
            clk : in STD_LOGIC;
+           bin_h_i,bin_b_i,bin_h_d,bin_b_d: in STD_LOGIC_VECTOR (6 downto 0);
            anodo : out STD_LOGIC_VECTOR (3 downto 0);
-           katodo : out STD_LOGIC_VECTOR (7 downto 0));
+           katodo : out STD_LOGIC_VECTOR (6 downto 0));
 end zazpi_seg4;
 
 architecture Behavioral of zazpi_seg4 is
@@ -56,27 +57,27 @@ begin
 case oraingoa is
 when reset=>
     anodo<="1111";
-    katodo<="11111111";
+    katodo<="1111111";
     hurrengoa<=bateko;
 when bateko=>
     anodo<="1110";
-    katodo<=not"01101111";
+    katodo<=bin_b_d;
     hurrengoa<=hamarreko;
 when hamarreko=>
     anodo<="1101";
-    katodo<=not"01111111";
+    katodo<=bin_h_d;
     hurrengoa<=ehuneko;
 when ehuneko=>
     anodo<="1011";
-    katodo<=not"00000110";
+    katodo<=bin_b_i;
     hurrengoa<=milako;
 when milako=>
     anodo<="0111";
-    katodo<=not"01001111";
+    katodo<=bin_h_i;
     hurrengoa<=bateko;
 when others=>
     anodo<="1111";
-    katodo<="11111111";
+    katodo<="1111111";
     hurrengoa<=reset;
 end case;
 end process;

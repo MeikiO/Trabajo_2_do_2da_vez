@@ -7,17 +7,21 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/lau_digitu/lau_digitu.cache/wt [current_project]
-set_property parent.project_path C:/lau_digitu/lau_digitu.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.cache/wt [current_project]
+set_property parent.project_path C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo c:/lau_digitu/lau_digitu.cache/ip [current_project]
+set_property ip_output_repo c:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd
-  C:/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd
-  C:/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/FSTM.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/Mux1.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/adder_resta.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/deco_bin.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/f_zat.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/mux2.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/zazpi_seg4.vhd
+  C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/sources_1/new/nagusia.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -27,8 +31,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc
-set_property used_in_implementation false [get_files C:/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
+read_xdc C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc
+set_property used_in_implementation false [get_files C:/Users/mikel/Desktop/proyecto/producto/Vivado/lau_digitu/lau_digitu.srcs/constrs_1/imports/mikrouhina/Basys3_Master.xdc]
 
 
 synth_design -top nagusia -part xc7a35tcpg236-1
