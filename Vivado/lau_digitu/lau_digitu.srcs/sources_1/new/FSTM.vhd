@@ -36,11 +36,8 @@ entity FSTM is
            reset : in STD_LOGIC;
            w19 : in STD_LOGIC;
            t17 : in STD_LOGIC;
-           t1 : in STD_LOGIC_vector (6 downto 0);
-           t2 : in STD_LOGIC_vector (6 downto 0);
-           time1 :out STD_LOGIC_vector (6 downto 0);
-           time2 : out STD_LOGIC_vector (6 downto 0);
-           resta : out STD_LOGIC_vector (1 downto 0));
+           time1 :out STD_LOGIC;
+           time2 : out STD_LOGIC);
 end FSTM;
 
 architecture Behavioral of FSTM is
@@ -52,7 +49,7 @@ begin
 sek: process(clk,reset)
 begin
 if reset='1' then
-    oraingoa<= ezker       ;       --------primera egoera despues de reset
+    oraingoa<= init       ;       --------primera egoera despues de reset
 elsif clk'event and clk='1' then
     oraingoa<=hurrengoa;
 end if;
@@ -60,47 +57,46 @@ end process;
 
 
 
-egoerak: process( w19,t17,t1,t2) 
+egoerak: process( w19,t17) 
 begin
 
 case oraingoa is
 
 
 when init  =>       --egoeras
-time1<="1100011";
-time2<="1100011";
-resta<="00";
+time1<='0';
+time2<='0';
 
-if(  w19  ='1') then 
-hurrengoa<=ezker      ;
+if( w19  ='0' and  t17  ='1' ) then 
+hurrengoa<=ezker  ;
+elsif( w19='1' and t17  ='0' ) then 
+hurrengoa<=eskuin  ;
 else
 hurrengoa<= init ;   --para quedarse en la misma egoera
 end if;
 
 
 when ezker  =>       --egoeras
-time1<=t1;
-time2<=t2;
-resta<="10";
+time1<='1';
+time2<='0';
 
 
-if(  w19  ='1') then 
-hurrengoa<=eskuin      ;
+if(  w19  ='1' and t17='0') then 
+hurrengoa<=eskuin     ;
 else
 hurrengoa<= ezker ;   --para quedarse en la misma egoera
 end if;
 
 
 when eskuin  =>       --egoeras
-time1<=t1;
-time2<=t2;
-resta<="01";
+time1<='0';
+time2<='1';
 
 
-if( t17 ='1') then 
-hurrengoa<=eskuin      ;
+if( w19  ='0' and t17='1') then 
+hurrengoa<=ezker      ;
 else
-hurrengoa<= ezker ;   --para quedarse en la misma egoera
+hurrengoa<= eskuin ;   --para quedarse en la misma egoera
 end if;
 
 

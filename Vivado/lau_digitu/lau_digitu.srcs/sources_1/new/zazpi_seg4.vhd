@@ -44,7 +44,7 @@ type egoera is (reset, bateko, hamarreko, ehuneko, milako);
 signal oraingoa, hurrengoa: egoera;
 
 begin
-SEQ: process (rst,clk)
+SEQ: process (rst,clk,bin_h_i,bin_b_i,bin_h_d,bin_b_d)
 begin
 if rst='1' then
     oraingoa<=reset;

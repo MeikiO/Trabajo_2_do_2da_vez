@@ -33,24 +33,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity nagusia is
     Port ( clk : in STD_LOGIC;
-           reset , w19,t17 : in STD_LOGIC;
+           reset , izq,der : in STD_LOGIC;
+           sel: out std_logic_vector(1 downto 0);
            fin: out std_logic_vector(1 downto 0);
-           anodo : out STD_LOGIC_VECTOR (3 downto 0);
-           katodo : out STD_LOGIC_VECTOR (6 downto 0));
+           an : out STD_LOGIC_VECTOR (3 downto 0);
+           seg : out STD_LOGIC_VECTOR (6 downto 0));
 end nagusia;
 
 architecture Behavioral of nagusia is
 
-component FSTM is
+component fstm is
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
            w19 : in STD_LOGIC;
            t17 : in STD_LOGIC;
-           t1 : in STD_LOGIC_vector (6 downto 0);
-           t2 : in STD_LOGIC_vector (6 downto 0);
-           time1 :out STD_LOGIC_vector (6 downto 0);
-           time2 : out STD_LOGIC_vector (6 downto 0);
-           resta : out STD_LOGIC_vector (1 downto 0));
+           time1 :out STD_LOGIC;
+           time2 : out STD_LOGIC);
 end component;
 
 
@@ -61,31 +59,29 @@ component f_zat
            clk_out : out STD_LOGIC);
 end component;
 
-component Mux1 is
-    Port ( t1 : in STD_LOGIC_VECTOR (6 downto 0);
-           t2 : in STD_LOGIC_VECTOR (6 downto 0);
-           sel : in STD_LOGIC_VECTOR (1 downto 0);
-           fijo : out STD_LOGIC_VECTOR (6 downto 0);
-           quitar : out STD_LOGIC_VECTOR (6 downto 0));
+component temp is
+    Port ( rst : in STD_LOGIC;
+           clk_in : in STD_LOGIC;
+           clk_out : out STD_LOGIC);
 end component;
-
 
 component adder_resta is
     Port ( clk : in STD_LOGIC;
-           reset : in STD_LOGIC;
-           sel : in std_logic_vector(1 downto 0);
-           val : in STD_LOGIC_VECTOR (6 downto 0);
-           irt : out STD_LOGIC_VECTOR (6 downto 0);
-           fin : out STD_LOGIC_vector(1 downto 0));
+       reset : in STD_LOGIC;
+       val1 : in STD_LOGIC;
+       val2 : in STD_LOGIC;
+       izquierda : out STD_LOGIC_VECTOR (6 downto 0);
+       derecha : out STD_LOGIC_VECTOR (6 downto 0);
+       fin : out STD_LOGIC_vector(1 downto 0));
 end component;
 
 
-component mux2 is
-    Port ( v1 : in STD_LOGIC_VECTOR (6 downto 0);
-           v2 : in STD_LOGIC_VECTOR (6 downto 0);
-           sel : in STD_LOGIC_VECTOR (1 downto 0);
-           izquierda : out STD_LOGIC_VECTOR (6 downto 0);
-           derecha : out STD_LOGIC_VECTOR (6 downto 0));
+component blink is
+    Port ( clk : in STD_LOGIC;
+       reset : in STD_LOGIC;
+       sig: in std_logic;
+       fin : in STD_LOGIC_VECTOR (1 downto 0);
+       irt : out STD_LOGIC_VECTOR (1 downto 0));
 end component;
 
 component deco_bin is
@@ -104,56 +100,53 @@ component zazpi_seg4 is
 end component;
 
 
-signal sizquierda,sderecha,sfijo,squitar,stime1,stime2,samartar_i
+signal sizquierda,sderecha,samartar_i
 ,sbatekoa_i,samartar_d,sbatekoa_d,snewvalue : std_logic_vector(6 downto 0);
 
-signal sresta,sfin :std_logic_vector(1 downto 0);
+signal sfin,sirt :std_logic_vector(1 downto 0);
 
 signal san :std_logic_vector(3 downto 0);
 signal sseg:std_logic_vector(6 downto 0);
 
-signal sig: std_logic;
+signal sig,segundu,stime1,stime2: std_logic;
 
 begin
 
 
 component1: FSTM Port map ( clk => clk ,
            reset  =>reset  ,
-           w19  => w19 ,
-           t17  => t17 ,
-           t1  => sizquierda ,
-           t2 =>  sderecha,
+           w19  => izq ,
+           t17  => der ,
            time1  => stime1 ,
-           time2  => stime2 ,
-           resta =>  sresta);
+           time2  => stime2 );
+
+
 
 component2: f_zat  Port map ( clk  => clk ,
            rst  => reset ,
            clk_out  => sig );
 
-
-component3: Mux1 Port map ( t1  => stime1 ,
-           t2  =>  stime2,
-           sel  =>  sresta,
-           fijo  => sfijo ,
-           quitar => squitar );
+component3:temp  Port map ( rst =>reset   ,
+           clk_in =>  clk ,
+           clk_out =>  segundu );
 
 
 
-component4: adder_resta Port map ( clk =>sig  ,
+
+
+component4: adder_resta Port map ( clk =>segundu  ,
            reset  => reset ,
-           sel => sresta ,
-           val  => squitar ,
-           irt => snewvalue ,
+           val1  => stime1 ,
+           val2  => stime2 ,
+           izquierda=>sizquierda,
+           derecha=>sderecha,
            fin  =>  sfin);
 
-
-
-component5: mux2 Port map ( v1  => sfijo  ,
-           v2  =>  squitar,
-           sel  =>  sresta,
-           izquierda  => sizquierda ,
-           derecha  => sderecha );
+component5: blink Port map ( clk =>clk  ,
+           reset  =>  reset ,
+           sig=> segundu,
+           fin  =>  sfin ,
+           irt  =>  sirt );
 
 
 component6: deco_bin Port map ( va1  =>sizquierda  ,
@@ -166,7 +159,7 @@ component7: deco_bin Port map ( va1  =>sderecha  ,
 
 
 component8: zazpi_seg4  Port map ( rst => reset   ,
-           clk => clk   ,
+           clk => sig  ,
            bin_h_i=> samartar_i   ,
            bin_b_i=>sbatekoa_i    ,
            bin_h_d=> samartar_d   ,
@@ -174,11 +167,15 @@ component8: zazpi_seg4  Port map ( rst => reset   ,
            anodo => san   ,
            katodo => sseg );
 
-fin<=sfin;
 
-katodo<=sseg;
+sel(0)<=stime1;
+sel(1)<=stime2;
 
-anodo<=san;
+fin<=sirt;
+
+seg<=sseg;
+
+an<=san;
 
 
 end Behavioral;

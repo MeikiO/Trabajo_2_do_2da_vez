@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Dec 15 20:44:11 2020
+| Date         : Wed Dec 16 22:42:44 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file nagusia_methodology_drc_routed.rpt -rpx nagusia_methodology_drc_routed.rpx
 | Design       : nagusia
@@ -23,86 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 48
-+-----------+------------------+-----------------------------+------------+
-| Rule      | Severity         | Description                 | Violations |
-+-----------+------------------+-----------------------------+------------+
-| TIMING-23 | Critical Warning | Combinatorial loop found    | 14         |
-| TIMING-17 | Warning          | Non-clocked sequential cell | 34         |
-+-----------+------------------+-----------------------------+------------+
+             Violations found: 71
++-----------+----------+-----------------------------+------------+
+| Rule      | Severity | Description                 | Violations |
++-----------+----------+-----------------------------+------------+
+| TIMING-17 | Warning  | Non-clocked sequential cell | 71         |
++-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-23#1 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/elementu[6]_i_2/I1 and component1/elementu[6]_i_2/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#2 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/elementu[6]_i_4/I2 and component1/elementu[6]_i_4/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#3 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_1/I1 and component1/g0_b0_i_1/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#4 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_10/I2 and component1/g0_b0_i_10/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#5 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_11/I2 and component1/g0_b0_i_11/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#6 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_12/I2 and component1/g0_b0_i_12/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#7 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_2/I1 and component1/g0_b0_i_2/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#8 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_3/I1 and component1/g0_b0_i_3/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#9 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_4/I1 and component1/g0_b0_i_4/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#10 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_5/I1 and component1/g0_b0_i_5/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#11 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_6/I1 and component1/g0_b0_i_6/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#12 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_7/I2 and component1/g0_b0_i_7/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#13 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_8/I2 and component1/g0_b0_i_8/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#14 Critical Warning
-Combinatorial loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between component1/g0_b0_i_9/I2 and component1/g0_b0_i_9/O to disable the timing loop
-Related violations: <none>
-
 TIMING-17#1 Warning
 Non-clocked sequential cell  
 The clock pin component1/oraingoa_reg[0]/C is not reached by a timing clock
@@ -205,70 +134,255 @@ Related violations: <none>
 
 TIMING-17#21 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[0]/C is not reached by a timing clock
+The clock pin component3/clk_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[1]/C is not reached by a timing clock
+The clock pin component3/kont_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[2]/C is not reached by a timing clock
+The clock pin component3/kont_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[3]/C is not reached by a timing clock
+The clock pin component3/kont_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[4]/C is not reached by a timing clock
+The clock pin component3/kont_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[5]/C is not reached by a timing clock
+The clock pin component3/kont_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Warning
 Non-clocked sequential cell  
-The clock pin component4/elementu_reg[6]/C is not reached by a timing clock
+The clock pin component3/kont_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Warning
 Non-clocked sequential cell  
-The clock pin component4/fin_reg[0]/C is not reached by a timing clock
+The clock pin component3/kont_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Warning
 Non-clocked sequential cell  
-The clock pin component4/fin_reg[1]/C is not reached by a timing clock
+The clock pin component3/kont_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Warning
 Non-clocked sequential cell  
-The clock pin component8/FSM_onehot_oraingoa_reg[0]/C is not reached by a timing clock
+The clock pin component3/kont_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Warning
 Non-clocked sequential cell  
-The clock pin component8/FSM_onehot_oraingoa_reg[1]/C is not reached by a timing clock
+The clock pin component3/kont_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Warning
 Non-clocked sequential cell  
-The clock pin component8/FSM_onehot_oraingoa_reg[2]/C is not reached by a timing clock
+The clock pin component3/kont_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Warning
 Non-clocked sequential cell  
-The clock pin component8/FSM_onehot_oraingoa_reg[3]/C is not reached by a timing clock
+The clock pin component3/kont_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Warning
+Non-clocked sequential cell  
+The clock pin component3/kont_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_d_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Warning
+Non-clocked sequential cell  
+The clock pin component4/elementu_i_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Warning
+Non-clocked sequential cell  
+The clock pin component4/fin_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#64 Warning
+Non-clocked sequential cell  
+The clock pin component4/fin_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Warning
+Non-clocked sequential cell  
+The clock pin component5/derecha_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Warning
+Non-clocked sequential cell  
+The clock pin component5/izquierda_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Warning
+Non-clocked sequential cell  
+The clock pin component8/FSM_onehot_oraingoa_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Warning
+Non-clocked sequential cell  
+The clock pin component8/FSM_onehot_oraingoa_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Warning
+Non-clocked sequential cell  
+The clock pin component8/FSM_onehot_oraingoa_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Warning
+Non-clocked sequential cell  
+The clock pin component8/FSM_onehot_oraingoa_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Warning
 Non-clocked sequential cell  
 The clock pin component8/FSM_onehot_oraingoa_reg[4]/C is not reached by a timing clock
 Related violations: <none>

@@ -36,36 +36,52 @@ use IEEE.std_logic_unsigned.all;
 entity adder_resta is
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
-           sel : in std_logic_vector(1 downto 0);
-           val : in STD_LOGIC_VECTOR (6 downto 0);
-           irt : out STD_LOGIC_VECTOR (6 downto 0);
+           val1 : in STD_LOGIC;
+           val2 : in STD_LOGIC;
+           izquierda : out STD_LOGIC_VECTOR (6 downto 0);
+           derecha : out STD_LOGIC_VECTOR (6 downto 0);
            fin : out STD_LOGIC_vector(1 downto 0));
 end adder_resta;
 
 architecture Behavioral of adder_resta is
 
-signal elementu: STD_LOGIC_VECTOR (6 downto 0);
+signal elementu_d,elementu_i: STD_LOGIC_VECTOR (6 downto 0);
 
 begin
 
 contar: process(reset,clk)
 begin
 if reset='1' then
-elementu<="0000000";
+elementu_d<="1100011";
+elementu_i<="1100011";
+fin<="00";
 
 elsif clk' event and clk='1' then
-    elementu<=val;
-    if(elementu > "0000000") then 
-        elementu<=elementu-1;
+    if(val1='1' and val2='0') then---------------------2
+        if (elementu_d<=0)then    ---------------3
+        fin<="01";
+        elementu_d<="0000000";
+        else 
+        elementu_d<=elementu_d-1;
         fin<="00";
-    else
-    fin<=sel;
-    end if;
+    end if;                     ------------3
+
+  elsif(val1='0' and val2='1') then---------------------2
+    if (elementu_i<=0)then    ---------------3
+    fin<="10";
+    elementu_i<="0000000";
+    else 
+    elementu_i<=elementu_i-1;
+    fin<="00";
+end if;
+
+end if;
 
 end if;
 
 
-  irt<=val;
+derecha<=elementu_d;
+izquierda<=elementu_i;
 
 end process contar;
 
