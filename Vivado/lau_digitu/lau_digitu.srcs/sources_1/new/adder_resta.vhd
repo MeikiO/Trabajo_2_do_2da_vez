@@ -45,6 +45,7 @@ end adder_resta;
 
 architecture Behavioral of adder_resta is
 
+signal blok : std_logic;
 signal elementu_d,elementu_i: STD_LOGIC_VECTOR (6 downto 0);
 
 begin
@@ -55,21 +56,24 @@ if reset='1' then
 elementu_d<="1100011";
 elementu_i<="1100011";
 fin<="00";
+blok<='0';
 
 elsif clk' event and clk='1' then
-    if(val1='1' and val2='0') then---------------------2
+    if(val1='1' and val2='0') and blok='0' then---------------------2
         if (elementu_d<=0)then    ---------------3
         fin<="01";
         elementu_d<="0000000";
+        blok<='1';
         else 
         elementu_d<=elementu_d-1;
         fin<="00";
     end if;                     ------------3
 
-  elsif(val1='0' and val2='1') then---------------------2
+  elsif(val1='0' and val2='1') and blok='0' then---------------------2
     if (elementu_i<=0)then    ---------------3
     fin<="10";
     elementu_i<="0000000";
+    blok<='1';
     else 
     elementu_i<=elementu_i-1;
     fin<="00";

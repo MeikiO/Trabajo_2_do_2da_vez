@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 16 22:41:55 2020
+| Date         : Thu Dec 17 18:04:41 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_drc -file nagusia_drc_opted.rpt
 | Design       : nagusia

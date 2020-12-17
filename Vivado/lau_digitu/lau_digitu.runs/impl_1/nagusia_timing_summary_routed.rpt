@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 16 22:42:47 2020
+| Date         : Thu Dec 17 18:05:28 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file nagusia_timing_summary_routed.rpt -rpx nagusia_timing_summary_routed.rpx
 | Design       : nagusia
@@ -56,7 +56,7 @@ Table of Contents
 
  There are 5 register/latch pins with no clock driven by root clock pin: component2/clk_out_reg/Q (HIGH)
 
- There are 16 register/latch pins with no clock driven by root clock pin: component3/clk_out_reg/Q (HIGH)
+ There are 17 register/latch pins with no clock driven by root clock pin: component3/clk_out_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -71,7 +71,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 155 pins that are not constrained for maximum delay. (HIGH)
+ There are 157 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
