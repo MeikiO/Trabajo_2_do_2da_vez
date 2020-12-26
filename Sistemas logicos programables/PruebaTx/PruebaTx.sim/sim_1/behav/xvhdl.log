@@ -1,0 +1,9 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sources_1/new/TopDesign.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ProFit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity kcuart_tx
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sim_1/new/Testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testbench
+ERROR: [VRFC 10-487] character 'z' is not in element type std_ulogic [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sim_1/new/Testbench.vhd:83]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sim_1/new/Testbench.vhd:38]
+INFO: [VRFC 10-240] VHDL file C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/PruebaTx/PruebaTx.srcs/sim_1/new/Testbench.vhd ignored due to errors

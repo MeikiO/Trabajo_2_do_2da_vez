@@ -1,0 +1,9 @@
+# gradle gitignore
+.gradle
+!gradle-wrapper.jar
+build/
+
+# idea gitignore
+.idea/
+out/
+/bin/
