@@ -21,6 +21,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+
 import chesspresso.Chess;
 import chesspresso.pgn.PGN;
 import chesspresso.pgn.PGNReader;
@@ -133,9 +134,11 @@ public class Partida {
          PGN
      }
      
+ 
+     
      public void guardarEnUnArchivo(FormatoDeSalida formato) {
          
-         File archivo=null;  ///
+         File archivo = elegirUnArchivoParaGuardar(formato);
          
          if (archivo != null) {
              try {
@@ -162,28 +165,58 @@ public class Partida {
          }
      }
     
-     
-     
+     private File elegirUnArchivoParaGuardar(FormatoDeSalida formato) {
+         
+         final JFileChooser selectorDeArchivos = new JFileChooser();
+         FileNameExtensionFilter extension;
+         switch (formato) {
+         case BINARIO:
+             extension = new FileNameExtensionFilter("Chesspresso binario", "bin");
+         default: //pgn:
+             extension = new FileNameExtensionFilter("estandar PGN", "pgn");
+         }
+         selectorDeArchivos.setFileFilter(extension);
+         
+         int resultado = selectorDeArchivos.showSaveDialog(new JFrame());
+         if (resultado == JFileChooser.APPROVE_OPTION) {
+             return selectorDeArchivos.getSelectedFile();
+         }
+         else {
+             return null;
+         }
+         
+     }
+    
      
      public Game CargarDesdeUnArchivo(File archivo) {
          
-    	 Game juegoCargado=new Game() ;
+    	 Game cargado=new Game();
+         
+         FormatoDeSalida formato = null;
+         if (archivo.getName().contains(".bin")) {
+             formato = FormatoDeSalida.BINARIO;
+         }
+         else if (archivo.getName().contains(".pgn")) {
+             formato = FormatoDeSalida.PGN;
+         }
+         
          if (archivo != null) {
              try {
-                 	DataInputStream flujoDeEntrada = new DataInputStream(new FileInputStream(archivo));
-           
+                 DataInputStream flujoDeEntrada = new DataInputStream(new FileInputStream(archivo));
+                 switch (formato) {
+                 case BINARIO:
+                     GameModel modelo = new GameModel(flujoDeEntrada, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
+                 
+                 default: //pgn:
                     PGNReader lectorPGN = new PGNReader(flujoDeEntrada, "?unNombre?");
                      try {
-                    	 
-                    	 juegoCargado = lectorPGN.parseGame(); //lee la siguiente partida que haya en el archivo PGN
-                     } 
-                     catch (PGNSyntaxError e) {
+                         cargado= lectorPGN.parseGame(); //lee la siguiente partida que haya en el archivo PGN
+                     } catch (PGNSyntaxError e) {
                          // TODO Auto-generated catch block
                          e.printStackTrace();
                      }
-                 
-                     
-                     flujoDeEntrada.close();
+                 }
+                 flujoDeEntrada.close();
              }
              catch (FileNotFoundException e1) {
                  // TODO Auto-generated catch block
@@ -195,7 +228,7 @@ public class Partida {
              }
          }
          
-         return juegoCargado;
+         return cargado;
      }
      
 

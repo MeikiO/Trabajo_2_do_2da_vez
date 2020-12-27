@@ -58,7 +58,7 @@ seleccion= new Scene(this.menuSeleccion(primaryStage), 300, 275);
 cargarPartida=new Scene(this.menuCarga(primaryStage),300,250);
 
 //scene 4
-juego=new Scene(this.juego(primaryStage),600,500);
+//juego=new Scene(this.juego(primaryStage),600,500);
 
 //scene 5
 
@@ -113,9 +113,13 @@ private Parent menuSeleccion(Stage primaryStage) {
     Label label1= new Label("menu seleccion");
  	
  	Button button1= new Button("Jugar");
+ 	
  	button1.setOnAction(e ->{
  	
- 	this.setPartida(new Partida());  //se crea nueva partia
+ 	this.setCargado(false);	
+ 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
+ 													   //tenemos que crear la escena(panel) de nuevo
+ 		
  	primaryStage.setScene(juego);
  	
  	
@@ -147,15 +151,14 @@ private Parent juego(Stage primaryStage) {
 	
 	 
 	
+	
 	if(!this.isCargado()) {
-		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia
-	}
+		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia	
 		
+	}
 	
-	
-	Pane pane = new Pane();
+	Pane pane = new Pane();	
 	pane=this.enseñarPartida(partida);
-	
 
 		
 	VBox layout1 = new VBox(20);
@@ -258,20 +261,26 @@ private Parent menuCarga(Stage primaryStage) {
 		
         fileChooser.setInitialDirectory(new File("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files"));
 
-		
-        File selectedFile = fileChooser.showOpenDialog(primaryStage);
+		File selectedFile = fileChooser.showOpenDialog(primaryStage);
         
         
-		Game loaded=partida.CargarDesdeUnArchivo(selectedFile);
-		
-		
-		Partida cargada=new Partida();
+        
+        Partida cargada=new Partida();
+
+        Game loaded=cargada.CargarDesdeUnArchivo(selectedFile);
+
 		cargada.setJuego(loaded);
 		
 		this.setPartida(cargada);
 		
 		
-		primaryStage.setScene(juego);
+		this.setCargado(true);
+		
+		
+	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
+	 														//tenemos que crear la escena(panel) de nuevo
+
+	 	primaryStage.setScene(juego);
 		   
 	});   
 	
