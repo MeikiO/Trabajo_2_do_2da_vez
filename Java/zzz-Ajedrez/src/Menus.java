@@ -1,5 +1,7 @@
+import java.io.File;
 import java.io.IOException;
 
+import chesspresso.game.Game;
 import chesspresso.game.GameModel;
 import javafx.application.Application;
 import javafx.embed.swing.SwingNode;
@@ -17,6 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Menus extends Application {
@@ -24,10 +27,11 @@ public class Menus extends Application {
 public Scene inicio, seleccion,cargarPartida,juego,pausa,terminacion;
 public GridPane grid;
 public Partida partida;
+public boolean cargado;
 
 
 PantallaDondeMostrarLaPartida pantalla;
-private int i;
+
 
 public static void main(String[] args) {
 launch(args);
@@ -61,9 +65,9 @@ juego=new Scene(this.juego(primaryStage),600,500);
 pausa=new Scene(this.pausa(primaryStage),300,250);
 
 
-//primaryStage.setScene(inicio);
+primaryStage.setScene(inicio);
 
-primaryStage.setScene(juego);
+//primaryStage.setScene(juego);
 
 
 primaryStage.show();
@@ -98,7 +102,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	// TODO Auto-generated method stub
    
 	//el grid es el contenedor para poner todos los demas contenidos
-	i=0;
+
 	
 	grid = new GridPane();
      grid.setAlignment(Pos.CENTER);
@@ -109,7 +113,13 @@ private Parent menuSeleccion(Stage primaryStage) {
     Label label1= new Label("menu seleccion");
  	
  	Button button1= new Button("Jugar");
- 	button1.setOnAction(e ->{primaryStage.setScene(juego);});
+ 	button1.setOnAction(e ->{
+ 	
+ 	this.setPartida(new Partida());  //se crea nueva partia
+ 	primaryStage.setScene(juego);
+ 	
+ 	
+ 	});
  		
  
 	Button button2= new Button("Volver al inicio");
@@ -132,16 +142,38 @@ private Parent juego(Stage primaryStage) {
 	// TODO Auto-generated method stub
 	Label label1= new Label("partida");
 	
-
 	Button button1= new Button("Pausa");
 	button1.setOnAction(e -> primaryStage.setScene(pausa));   
 	
+	 
+	
+	if(!this.isCargado()) {
+		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia
+	}
+		
 	
 	
-	partida=new Partida();
-  
+	Pane pane = new Pane();
+	pane=this.enseñarPartida(partida);
+	
+
+		
+	VBox layout1 = new VBox(20);
+	layout1.getChildren().addAll(label1,button1,pane);
+	
+
+	
+	return layout1;
+}
+
+
+
+
+
+private Pane enseñarPartida(Partida partida2) {
+	// TODO Auto-generated method stub
 	pantalla = new PantallaDondeMostrarLaPartida(partida);
- 
+	 
 
     MiGestorDePartida gestor = new MiGestorDePartida(pantalla);
     partida.getJuego().addChangeListener(gestor); 
@@ -151,21 +183,12 @@ private Parent juego(Stage primaryStage) {
    pantalla.createAndSetSwingContent(swingNode);  //se adapta el JPanel de pantalla a JavaFx
 
    
-   
-   
+	 
    Pane pane = new Pane();
    pane.getChildren().add(swingNode); // Adding swing node
-
-
-	VBox layout1 = new VBox(20);     
-	layout1.getChildren().addAll(label1,button1,pane);
-	
-	return layout1;
+   
+   return pane;
 }
-
-
-
-
 
 
 private Parent pausa(Stage primaryStage) {
@@ -181,27 +204,41 @@ private Parent pausa(Stage primaryStage) {
 	//accion de guardar
 	
 	button2.setOnAction(e -> {
-	   try {
-		partida.save();
-	   } catch (IOException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
+	
+	   this.getPartida().guardarEnUnArchivo(Partida.FormatoDeSalida.BINARIO);  
 	
 	   primaryStage.setScene(inicio);
 	   
 	}); 
 	
 	
+	Button button3= new Button("Save game as PGN");
+  
 	
-	Button button3= new Button("Resign");
+	button3.setOnAction(e -> {
+		
+		this.getPartida().guardarEnUnArchivo(Partida.FormatoDeSalida.PGN); 
+		
+	primaryStage.setScene(inicio);
+		   
+	}); 
+	
+	
+	
+	Button button4= new Button("Resign");
 	//acabar la partida y borrar la partida guardada que habia antes   
 	
-	
+	button4.setOnAction(e -> {
+		
+		
+		
+	primaryStage.setScene(inicio);
+		   
+	}); 
 	
 	
 	VBox layout1 = new VBox(20);     
-	layout1.getChildren().addAll(label1, button1,button2,button3);
+	layout1.getChildren().addAll(label1, button1,button2,button3,button4);
 	
 	return layout1;
 }
@@ -217,10 +254,24 @@ private Parent menuCarga(Stage primaryStage) {
 	Button button1= new Button("Accept");
 	button1.setOnAction(e ->{
 		
-			partida.load();
-			
-			 
-		   primaryStage.setScene(juego);
+		FileChooser fileChooser = new FileChooser();
+		
+        fileChooser.setInitialDirectory(new File("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files"));
+
+		
+        File selectedFile = fileChooser.showOpenDialog(primaryStage);
+        
+        
+		Game loaded=partida.CargarDesdeUnArchivo(selectedFile);
+		
+		
+		Partida cargada=new Partida();
+		cargada.setJuego(loaded);
+		
+		this.setPartida(cargada);
+		
+		
+		primaryStage.setScene(juego);
 		   
 	});   
 	
@@ -230,6 +281,32 @@ private Parent menuCarga(Stage primaryStage) {
 	
 	return layout1;
 }
+
+
+
+//para evitar que se vuelva null al cambiar de escena 
+//tenemos que acceder con getter y seters sino dara null
+//en caso de que se acceda a el desde distintas escenas
+
+public Partida getPartida() {
+	return partida;
+}
+
+
+public void setPartida(Partida partida) {
+	this.partida = partida;
+}
+
+
+public boolean isCargado() {
+	return cargado;
+}
+
+
+public void setCargado(boolean cargado) {
+	this.cargado = cargado;
+}
+
 
 
 

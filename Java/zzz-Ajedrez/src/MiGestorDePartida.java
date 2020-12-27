@@ -41,20 +41,21 @@ public class MiGestorDePartida implements GameModelChangeListener {
         String texto = "El último movimiento ha sido " + Move.getString(ultimoMovimiento);
         System.out.println(texto);
         
-      
+    
 
         Move ultimo= game.getLastMove(); //cogemos el ultimo moviento
         ultimo.isWhiteMove(); //miramos si es blanco
         
         if(ultimo.isWhiteMove()) {
-        	System.out.print("son blancas");
+            texto = texto + " y lo han movido las blancas";
         }
         else {
-        	System.out.print("son negras");
+        	 texto = texto + " y lo han movido las negras";
         }
         
       
-        //pantallaGrafica.setInformacion(texto);
+        System.out.println(texto);
+        pantallaGrafica.setInformacion(texto);
     }
 
     

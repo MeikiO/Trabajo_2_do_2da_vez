@@ -4,6 +4,7 @@ import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.DataOutput;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,6 +12,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Calendar;
+
+
+
+
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import chesspresso.Chess;
 import chesspresso.pgn.PGN;
@@ -23,7 +32,8 @@ import chesspresso.game.GameModel;
 import chesspresso.game.GameMoveModel;
 
 import chesspresso.position.Position;
-
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import chesspresso.move.Move;
 import chesspresso.move.IllegalMoveException;
 
@@ -44,6 +54,8 @@ public class Partida {
 
      public Partida()
      {
+    	 
+    	 
          juego = new Game();
   
          
@@ -71,18 +83,17 @@ public class Partida {
          
         
          
-         this.recrearMovientos();
-         
-         GameModel modelo = juego.getModel();
-         GameHeaderModel cabecera = modelo.getHeaderModel();
-         GameMoveModel movimientos = modelo.getMoveModel();
-       
-       
-   
+         //this.recrearMovientos();
+
+          
      }
 
 
+     
+     
      private void recrearMovientos() {
+    	 
+    
     	 
          movimientos[0]= Move.getRegularMove(Chess.E2, Chess.E4,false);
          movimientos[1]= Move.getRegularMove(Chess.E7, Chess.E5,false);
@@ -117,45 +128,92 @@ public class Partida {
      }
 
      
-     public void save() throws IOException {
-    	 
-    	 
-    	  Writer file=  new FileWriter("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files\\Partida"+"1"+".pgn",false);
-       
-         PGNWriter escritura=new PGNWriter(file);
-            
-         GameModel modelo = juego.getModel();
-         GameHeaderModel cabecera = modelo.getHeaderModel();
-         GameMoveModel movimientos = modelo.getMoveModel();
-         
-
-         escritura.write(modelo);
-         
-         file.close();
-                    
+     public enum FormatoDeSalida {
+         BINARIO,
+         PGN
      }
      
-     public void load() {
-    	 
-    	    FileInputStream file = null;
-    	    //PGNReader
-    	    try {
-				file = new FileInputStream("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files\\Partida"+"1"+".txt");
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-     
-    	   
-          
-    	     GameModel modelo = juego.getModel();
-             GameHeaderModel cabecera = modelo.getHeaderModel();
-             GameMoveModel movimientos = modelo.getMoveModel();
-    	    
-            
-              
-
+     public void guardarEnUnArchivo(FormatoDeSalida formato) {
+         
+         File archivo=null;  ///
+         
+         if (archivo != null) {
+             try {
+                 switch (formato) {
+                 case BINARIO:
+                     DataOutputStream flujoDeSalida = new DataOutputStream(new FileOutputStream(archivo));
+                     juego.save(flujoDeSalida, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
+                     flujoDeSalida.close();
+                 default: //pgn:
+                     FileWriter escritor = new FileWriter(archivo);
+                     PGNWriter escritorPGN = new PGNWriter(escritor);
+                     escritorPGN.write(juego.getModel());
+                     escritor.close();
+                 }
+             }
+             catch (FileNotFoundException e1) {
+                 // TODO Auto-generated catch block
+                 e1.printStackTrace();
+             }
+             catch (IOException e2) {
+                 // TODO Auto-generated catch block
+                 e2.printStackTrace();
+             }
+         }
      }
+    
+     
+     
+     
+     public Game CargarDesdeUnArchivo(File archivo) {
+         
+    	 Game juegoCargado=new Game() ;
+         if (archivo != null) {
+             try {
+                 	DataInputStream flujoDeEntrada = new DataInputStream(new FileInputStream(archivo));
+           
+                    PGNReader lectorPGN = new PGNReader(flujoDeEntrada, "?unNombre?");
+                     try {
+                    	 
+                    	 juegoCargado = lectorPGN.parseGame(); //lee la siguiente partida que haya en el archivo PGN
+                     } 
+                     catch (PGNSyntaxError e) {
+                         // TODO Auto-generated catch block
+                         e.printStackTrace();
+                     }
+                 
+                     
+                     flujoDeEntrada.close();
+             }
+             catch (FileNotFoundException e1) {
+                 // TODO Auto-generated catch block
+                 e1.printStackTrace();
+             }
+             catch (IOException e2) {
+                 // TODO Auto-generated catch block
+                 e2.printStackTrace();
+             }
+         }
+         
+         return juegoCargado;
+     }
+     
+
+
+
+     
+     
+
+     
+     
+ 
+
+
+  
+     
+
+    
+
 
 
 	public GameModel getModelo() {
