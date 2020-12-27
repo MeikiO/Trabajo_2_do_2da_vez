@@ -56,10 +56,14 @@ seleccion= new Scene(this.menuSeleccion(primaryStage), 300, 275);
 
 //scene 3
 
-cargarPartida=new Scene(this.menuCarga(primaryStage),300,250);
+
 
 //scene 4
-//juego=new Scene(this.juego(primaryStage),600,500);
+
+//juego=new Scene(this.juego(primaryStage),600,500); 
+
+//este se crea cada vez que accedamos al juego
+
 
 //scene 5
 
@@ -86,7 +90,32 @@ private Parent menuInicio(Stage primaryStage) {
 	button1.setOnAction(e -> primaryStage.setScene(seleccion));   
 	
 	Button button2= new Button("Load game");
-	button2.setOnAction(e -> primaryStage.setScene(cargarPartida));   
+	button2.setOnAction(e -> {
+		
+		this.setParaGuardar(false);
+		
+		selectedFile=this.abrirArchivos(primaryStage);
+        
+        Partida cargada=new Partida();
+
+        Game loaded=cargada.CargarDesdeUnArchivo(selectedFile);
+
+		cargada.setJuego(loaded);
+		
+		this.setPartida(cargada);
+		
+		
+		this.setCargado(true);
+		
+		
+	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
+	 														//tenemos que crear la escena(panel) de nuevo
+
+	 	primaryStage.setScene(juego);
+		   
+	});   
+	
+	  
 	
 	Button button3= new Button("Exit");
 	button3.setOnAction(e -> primaryStage.close());   
@@ -157,7 +186,7 @@ private Parent juego(Stage primaryStage) {
 	
 	
 	Pane pane = new Pane();	
-	pane=this.enseñarPartida(partida);
+	pane=this.enseñarPartida(partida,primaryStage);
 
 		
 	VBox layout1 = new VBox(20);
@@ -172,9 +201,9 @@ private Parent juego(Stage primaryStage) {
 
 
 
-private Pane enseñarPartida(Partida partida2) {
+private Pane enseñarPartida(Partida partida2,Stage primaryStage) {
 	// TODO Auto-generated method stub
-	pantalla = new PantallaDondeMostrarLaPartida(partida);
+	pantalla = new PantallaDondeMostrarLaPartida(partida, primaryStage);
 	 
 
     MiGestorDePartida gestor = new MiGestorDePartida(pantalla);
@@ -203,15 +232,13 @@ private Parent pausa(Stage primaryStage) {
 	button1.setOnAction(e -> primaryStage.setScene(juego));   
 	
 
-	
-	
 	Button button3= new Button("Save game");
 	button3.setOnAction(e -> {
 		
 	this.setParaGuardar(true);
 	
 	selectedFile=this.abrirArchivos(primaryStage);
-	this.getPartida().guardarEnUnArchivo(selectedFile,this.getPartida()); 
+	this.partida.guardarEnUnArchivo(selectedFile); 
 	
 
 	primaryStage.setScene(inicio);
@@ -225,8 +252,7 @@ private Parent pausa(Stage primaryStage) {
 	
 	button4.setOnAction(e -> {
 		
-		
-		
+
 	primaryStage.setScene(inicio);
 		   
 	}); 
@@ -240,44 +266,6 @@ private Parent pausa(Stage primaryStage) {
 
 
 
-
-private Parent menuCarga(Stage primaryStage) {
-	// TODO Auto-generated method stub
-	Label label1= new Label("Menu Carga");
-	
-
-	Button button1= new Button("Accept");
-	button1.setOnAction(e ->{
-		
-		this.setParaGuardar(false);
-		
-		selectedFile=this.abrirArchivos(primaryStage);
-        
-        Partida cargada=new Partida();
-
-        Game loaded=cargada.CargarDesdeUnArchivo(selectedFile);
-
-		cargada.setJuego(loaded);
-		
-		this.setPartida(cargada);
-		
-		
-		this.setCargado(true);
-		
-		
-	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
-	 														//tenemos que crear la escena(panel) de nuevo
-
-	 	primaryStage.setScene(juego);
-		   
-	});   
-	
-	
-	VBox layout1 = new VBox(20);     
-	layout1.getChildren().addAll(label1,button1);
-	
-	return layout1;
-}
 
 
 

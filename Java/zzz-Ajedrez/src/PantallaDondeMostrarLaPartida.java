@@ -17,21 +17,20 @@ import chesspresso.game.Game;
 import chesspresso.game.GameModel;
 import chesspresso.game.view.GameBrowser;
 import javafx.embed.swing.SwingNode;
+import javafx.stage.Stage;
 
 public class PantallaDondeMostrarLaPartida {
      private JPanel cuadro;
-     Partida enJuego;
+
      GameBrowser buscador;
      private JTextField txtInformacion;
      
-     public PantallaDondeMostrarLaPartida(Partida partida)
+     public PantallaDondeMostrarLaPartida(Partida partida,Stage primaryStage)
      {
 	     cuadro = new JPanel();
 	     cuadro.setLayout(new BoxLayout(cuadro, WindowConstants.EXIT_ON_CLOSE));
 	     
-	     
-	     enJuego=partida;
-	     
+
 		 
 	     buscador = new GameBrowser(partida.getJuego()); 
 	       
@@ -39,10 +38,13 @@ public class PantallaDondeMostrarLaPartida {
 	     
 	     cuadro.add(buscador);
 
-	    
+
+	     
 	     txtInformacion = new JTextField();
 	     cuadro.add(txtInformacion);
-	    	    	     
+
+
+	     
 	     
 	     cuadro.setVisible(true);
 	     
@@ -72,13 +74,6 @@ public class PantallaDondeMostrarLaPartida {
           //elementos graficos de swing.
 	}
 
-	public Partida getEnJuego() {
-		return enJuego;
-	}
-
-	public void setEnJuego(Partida enJuego) {
-		this.enJuego = enJuego;
-	}
 
 	public GameBrowser getTablero() {
 		return buscador;

@@ -42,7 +42,6 @@ import chesspresso.move.IllegalMoveException;
 
 public class Partida {
      private Game juego;
-     private GameModel modelo;
      private Position tablero;
      
      short movimientos[]=new short[10];
@@ -136,21 +135,24 @@ public class Partida {
      
  
      
-     public void guardarEnUnArchivo(File selectedFile,Partida partidaAGuardar) {
+     public void guardarEnUnArchivo(File selectedFile) {
          
+    	System.out.print( this.toString()+"\n"+this.getJuego().getModel());
     	 
          if (selectedFile != null) {
              try {
                 
-                /*case BINARIO:
-                     DataOutputStream flujoDeSalida = new DataOutputStream(new FileOutputStream(archivo));
+                //case BINARIO:
+                    /*
+            	 	DataOutputStream flujoDeSalida = new DataOutputStream(new FileOutputStream(selectedFile));
                      juego.save(flujoDeSalida, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
                      flujoDeSalida.close();
-               */   
+                     */ 
+            	 
                      //pgn:
                      FileWriter escritor = new FileWriter(selectedFile);
                      PGNWriter escritorPGN = new PGNWriter(escritor);
-                     escritorPGN.write(partidaAGuardar.getModelo());
+                     escritorPGN.write(this.juego.getModel());
                      escritor.close();
              }
              
@@ -213,18 +215,6 @@ public class Partida {
      }
      
 
-
-
-
-
-	public GameModel getModelo() {
-		return modelo;
-	}
-
-
-	public void setModelo(GameModel modelo) {
-		this.modelo = modelo;
-	}
 
 
 	public Position getTablero() {

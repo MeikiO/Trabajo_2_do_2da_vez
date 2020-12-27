@@ -10,11 +10,11 @@ public class MiGestorDePartida implements GameModelChangeListener {
 
     private PantallaDondeMostrarLaPartida pantallaGrafica;
     int i=0;
-
+    
     
     public MiGestorDePartida(PantallaDondeMostrarLaPartida pantalla) {
         this.pantallaGrafica = pantalla;
-      
+       
     }
    
     @Override
@@ -48,9 +48,11 @@ public class MiGestorDePartida implements GameModelChangeListener {
         
         if(ultimo.isWhiteMove()) {
             texto = texto + " y lo han movido las blancas";
+             //enviar mensaje blanco
         }
         else {
         	 texto = texto + " y lo han movido las negras";
+        	 // enviar mensaje de negros
         }
         
       
