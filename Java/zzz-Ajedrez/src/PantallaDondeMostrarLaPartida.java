@@ -39,21 +39,10 @@ public class PantallaDondeMostrarLaPartida {
 	     
 	     cuadro.add(buscador);
 
-	     
 	    
 	     txtInformacion = new JTextField();
 	     cuadro.add(txtInformacion);
-	     
-	     /*
-	      Por restricciones en las escenas de javafx en el menu, ya que 
-	      no es posible pasar informacion de una escena a otra , he puesto los 
-	      botones de guardar y resign aqui, ya que al poner los botones en el
-	      menu pausa me daba null pointer exception, y no guardaba.
-	      */
-	
-
-	     
-	    	     
+	    	    	     
 	     
 	     cuadro.setVisible(true);
 	     

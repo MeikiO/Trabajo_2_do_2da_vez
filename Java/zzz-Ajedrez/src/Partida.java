@@ -136,24 +136,24 @@ public class Partida {
      
  
      
-     public void guardarEnUnArchivo(FormatoDeSalida formato) {
+     public void guardarEnUnArchivo(File selectedFile,Partida partidaAGuardar) {
          
-         File archivo = elegirUnArchivoParaGuardar(formato);
-         
-         if (archivo != null) {
+    	 
+         if (selectedFile != null) {
              try {
-                 switch (formato) {
-                 case BINARIO:
+                
+                /*case BINARIO:
                      DataOutputStream flujoDeSalida = new DataOutputStream(new FileOutputStream(archivo));
                      juego.save(flujoDeSalida, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
                      flujoDeSalida.close();
-                 default: //pgn:
-                     FileWriter escritor = new FileWriter(archivo);
+               */   
+                     //pgn:
+                     FileWriter escritor = new FileWriter(selectedFile);
                      PGNWriter escritorPGN = new PGNWriter(escritor);
-                     escritorPGN.write(juego.getModel());
+                     escritorPGN.write(partidaAGuardar.getModelo());
                      escritor.close();
-                 }
              }
+             
              catch (FileNotFoundException e1) {
                  // TODO Auto-generated catch block
                  e1.printStackTrace();
@@ -164,28 +164,7 @@ public class Partida {
              }
          }
      }
-    
-     private File elegirUnArchivoParaGuardar(FormatoDeSalida formato) {
-         
-         final JFileChooser selectorDeArchivos = new JFileChooser();
-         FileNameExtensionFilter extension;
-         switch (formato) {
-         case BINARIO:
-             extension = new FileNameExtensionFilter("Chesspresso binario", "bin");
-         default: //pgn:
-             extension = new FileNameExtensionFilter("estandar PGN", "pgn");
-         }
-         selectorDeArchivos.setFileFilter(extension);
-         
-         int resultado = selectorDeArchivos.showSaveDialog(new JFrame());
-         if (resultado == JFileChooser.APPROVE_OPTION) {
-             return selectorDeArchivos.getSelectedFile();
-         }
-         else {
-             return null;
-         }
-         
-     }
+
     
      
      public Game CargarDesdeUnArchivo(File archivo) {
@@ -209,9 +188,11 @@ public class Partida {
                  
                  default: //pgn:
                     PGNReader lectorPGN = new PGNReader(flujoDeEntrada, "?unNombre?");
-                     try {
+                     
+                    try {
                          cargado= lectorPGN.parseGame(); //lee la siguiente partida que haya en el archivo PGN
-                     } catch (PGNSyntaxError e) {
+                     } 									 //lee 1 partida por cada vez que se ejecuta el parse(pasar por la linea)
+                    catch (PGNSyntaxError e) {
                          // TODO Auto-generated catch block
                          e.printStackTrace();
                      }
@@ -233,19 +214,6 @@ public class Partida {
      
 
 
-
-     
-     
-
-     
-     
- 
-
-
-  
-     
-
-    
 
 
 

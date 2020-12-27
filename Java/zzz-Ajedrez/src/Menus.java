@@ -28,7 +28,8 @@ public Scene inicio, seleccion,cargarPartida,juego,pausa,terminacion;
 public GridPane grid;
 public Partida partida;
 public boolean cargado;
-
+public boolean paraGuardar;
+public File selectedFile;
 
 PantallaDondeMostrarLaPartida pantalla;
 
@@ -103,7 +104,6 @@ private Parent menuSeleccion(Stage primaryStage) {
    
 	//el grid es el contenedor para poner todos los demas contenidos
 
-	
 	grid = new GridPane();
      grid.setAlignment(Pos.CENTER);
      grid.setHgap(10);
@@ -149,13 +149,12 @@ private Parent juego(Stage primaryStage) {
 	Button button1= new Button("Pausa");
 	button1.setOnAction(e -> primaryStage.setScene(pausa));   
 	
-	 
-	
-	
+
 	if(!this.isCargado()) {
 		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia	
 		
 	}
+	
 	
 	Pane pane = new Pane();	
 	pane=this.enseñarPartida(partida);
@@ -203,25 +202,18 @@ private Parent pausa(Stage primaryStage) {
 	Button button1= new Button("Continue");
 	button1.setOnAction(e -> primaryStage.setScene(juego));   
 	
-	Button button2= new Button("Save game");
-	//accion de guardar
-	
-	button2.setOnAction(e -> {
-	
-	   this.getPartida().guardarEnUnArchivo(Partida.FormatoDeSalida.BINARIO);  
-	
-	   primaryStage.setScene(inicio);
-	   
-	}); 
+
 	
 	
-	Button button3= new Button("Save game as PGN");
-  
-	
+	Button button3= new Button("Save game");
 	button3.setOnAction(e -> {
 		
-		this.getPartida().guardarEnUnArchivo(Partida.FormatoDeSalida.PGN); 
-		
+	this.setParaGuardar(true);
+	
+	selectedFile=this.abrirArchivos(primaryStage);
+	this.getPartida().guardarEnUnArchivo(selectedFile,this.getPartida()); 
+	
+
 	primaryStage.setScene(inicio);
 		   
 	}); 
@@ -241,7 +233,7 @@ private Parent pausa(Stage primaryStage) {
 	
 	
 	VBox layout1 = new VBox(20);     
-	layout1.getChildren().addAll(label1, button1,button2,button3,button4);
+	layout1.getChildren().addAll(label1, button1,button3,button4);
 	
 	return layout1;
 }
@@ -257,13 +249,9 @@ private Parent menuCarga(Stage primaryStage) {
 	Button button1= new Button("Accept");
 	button1.setOnAction(e ->{
 		
-		FileChooser fileChooser = new FileChooser();
+		this.setParaGuardar(false);
 		
-        fileChooser.setInitialDirectory(new File("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files"));
-
-		File selectedFile = fileChooser.showOpenDialog(primaryStage);
-        
-        
+		selectedFile=this.abrirArchivos(primaryStage);
         
         Partida cargada=new Partida();
 
@@ -293,9 +281,35 @@ private Parent menuCarga(Stage primaryStage) {
 
 
 
+private File abrirArchivos(Stage primaryStage) {
+	// TODO Auto-generated method stub
+	File selectedFile;
+	
+	FileChooser fileChooser = new FileChooser();
+	
+    fileChooser.setInitialDirectory(new File("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files"));
+
+    fileChooser.getExtensionFilters().addAll(
+    	     new FileChooser.ExtensionFilter("PGN", "*.pgn")
+    	    ,new FileChooser.ExtensionFilter("Binario", "*.bin")
+    );
+    
+    if(this.isParaGuardar()) {
+    	 selectedFile = fileChooser.showSaveDialog(primaryStage);	
+    }
+    else {
+    	selectedFile = fileChooser.showOpenDialog(primaryStage);
+    }
+	
+ 
+    return selectedFile;
+}
+
+
+//en caso de que se acceda a la variable desde distintas escenas
 //para evitar que se vuelva null al cambiar de escena 
-//tenemos que acceder con getter y seters sino dara null
-//en caso de que se acceda a el desde distintas escenas
+//tenemos que acceder con getter y seters sino las variables seran null
+
 
 public Partida getPartida() {
 	return partida;
@@ -315,6 +329,19 @@ public boolean isCargado() {
 public void setCargado(boolean cargado) {
 	this.cargado = cargado;
 }
+
+
+public boolean isParaGuardar() {
+	return paraGuardar;
+}
+
+
+public void setParaGuardar(boolean paraGuardar) {
+	this.paraGuardar = paraGuardar;
+}
+
+
+
 
 
 
