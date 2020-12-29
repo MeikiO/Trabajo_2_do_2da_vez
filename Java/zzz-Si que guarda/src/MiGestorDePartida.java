@@ -58,5 +58,6 @@ public class MiGestorDePartida implements GameModelChangeListener {
         System.out.println(texto);
         informacion.setText(texto);
     }
+
     
 }

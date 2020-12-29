@@ -1,10 +1,15 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
 
 import chesspresso.game.Game;
 import chesspresso.game.GameModel;
 import chesspresso.game.view.GameBrowser;
+import chesspresso.pgn.PGN;
+import chesspresso.pgn.PGNWriter;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -33,7 +38,6 @@ public boolean paraGuardar;
 public File selectedFile;
 
 
-
 public static void main(String[] args) {
 launch(args);
 }
@@ -56,14 +60,10 @@ seleccion= new Scene(this.menuSeleccion(primaryStage), 300, 275);
 
 //scene 3
 
-
+cargarPartida=new Scene(this.menuCarga(primaryStage),300,250);
 
 //scene 4
-
-//juego=new Scene(this.juego(primaryStage),600,500); 
-
-//este se crea cada vez que accedamos al juego
-
+//juego=new Scene(this.juego(primaryStage),600,500);  
 
 //scene 5
 
@@ -90,32 +90,7 @@ private Parent menuInicio(Stage primaryStage) {
 	button1.setOnAction(e -> primaryStage.setScene(seleccion));   
 	
 	Button button2= new Button("Load game");
-	button2.setOnAction(e -> {
-		
-		this.setParaGuardar(false);
-		
-		selectedFile=this.abrirArchivos(primaryStage);
-        
-        Partida cargada=new Partida();
-
-        Game loaded=cargada.CargarDesdeUnArchivo(selectedFile);
-
-		cargada.setJuego(loaded);
-		
-		this.setPartida(cargada);
-		
-		
-		this.setCargado(true);
-		
-		
-	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
-	 														//tenemos que crear la escena(panel) de nuevo
-
-	 	primaryStage.setScene(juego);
-		   
-	});   
-	
-	  
+	button2.setOnAction(e -> primaryStage.setScene(cargarPartida));   
 	
 	Button button3= new Button("Exit");
 	button3.setOnAction(e -> primaryStage.close());   
@@ -145,11 +120,7 @@ private Parent menuSeleccion(Stage primaryStage) {
  	
  	button1.setOnAction(e ->{
  	
- 
- 	this.setCargado(false);
- 	Partida nueva=new Partida();
-	this.setPartida(nueva);
-	
+ 	this.setCargado(false);	
  	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
  													   //tenemos que crear la escena(panel) de nuevo
  		
@@ -182,6 +153,12 @@ private Parent juego(Stage primaryStage) {
 	Button button1= new Button("Pausa");
 	button1.setOnAction(e -> primaryStage.setScene(pausa));   
 	
+
+	if(!this.isCargado()) {
+		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia	
+		
+	}
+	
 	
 	Pane pane = new Pane();	
 	pane=this.enseñarPartida(partida);
@@ -201,23 +178,16 @@ private Parent juego(Stage primaryStage) {
 
 private Pane enseñarPartida(Partida partida2) {
 	// TODO Auto-generated method stub
-	
-	//en vez de crear una clase para ello, es mas seguro
-	//hacerlo aqui mismo, ya que hasi el proceso esta accesible
-	//para las escenas de javaFx
-   
-	GameBrowser buscador = new GameBrowser(partida.getJuego()); 
+    GameBrowser buscador = new GameBrowser(partida.getJuego()); 
     buscador.setEditable(true); // con esto podemos editar las posiciones del tablero a mano
 	 
-   
-    final SwingNode swingNode = new SwingNode();
-   swingNode.setContent(buscador);  //se adapta el componente Swing del tablero a JavaFx
+   final SwingNode swingNode = new SwingNode();
+   swingNode.setContent(buscador);  //se adapta el componente Swing a JavaFx
 
     
    TextField txtInformacion = new TextField();
    
-  
-   MiGestorDePartida gestor = new MiGestorDePartida(txtInformacion);
+    MiGestorDePartida gestor = new MiGestorDePartida(txtInformacion);
     partida.getJuego().addChangeListener(gestor); 
    
 	 
@@ -226,9 +196,8 @@ private Pane enseñarPartida(Partida partida2) {
    
    return layout1;
 }
-
-
-
+                             
+         
 
 
 private Parent pausa(Stage primaryStage) {
@@ -241,20 +210,15 @@ private Parent pausa(Stage primaryStage) {
 	button1.setOnAction(e -> primaryStage.setScene(juego));   
 	
 
+	
+	
 	Button button3= new Button("Save game");
 	button3.setOnAction(e -> {
-		
-	this.setParaGuardar(true);
-	
-	selectedFile=this.abrirArchivos(primaryStage);
-	
-	primaryStage.setScene(inicio);
-	
-	this.partida.guardarEnUnArchivo(selectedFile); 
-	
+	    
 
-	
-		   
+    	this.setParaGuardar(true);
+    	this.getPartida().guardarEnUnArchivo(); 
+    	primaryStage.setScene(inicio);
 	}); 
 	
 	
@@ -264,7 +228,8 @@ private Parent pausa(Stage primaryStage) {
 	
 	button4.setOnAction(e -> {
 		
-
+		
+		
 	primaryStage.setScene(inicio);
 		   
 	}); 
@@ -279,31 +244,44 @@ private Parent pausa(Stage primaryStage) {
 
 
 
-
-
-private File abrirArchivos(Stage primaryStage) {
+private Parent menuCarga(Stage primaryStage) {
 	// TODO Auto-generated method stub
-	File selectedFile;
+	Label label1= new Label("Menu Carga");
 	
-	FileChooser fileChooser = new FileChooser();
-	
-    fileChooser.setInitialDirectory(new File("C:\\Users\\mikel\\Desktop\\proyecto\\producto\\Java\\zzz-Ajedrez\\src\\files"));
 
-    fileChooser.getExtensionFilters().addAll(
-    	     new FileChooser.ExtensionFilter("PGN", "*.pgn")
-    	    ,new FileChooser.ExtensionFilter("Binario", "*.bin")
-    );
-    
-    if(this.isParaGuardar()) {
-    	 selectedFile = fileChooser.showSaveDialog(primaryStage);	
-    }
-    else {
-    	selectedFile = fileChooser.showOpenDialog(primaryStage);
-    }
+	Button button1= new Button("Accept");
+	button1.setOnAction(e ->{
+		
+		this.setParaGuardar(false);
+		
+        Partida cargada=new Partida();
+
+        Game loaded=cargada.crearUnNuevoJuegoDesdeUnArchivo();
+
+		cargada.setJuego(loaded);
+		
+		this.setPartida(cargada);
+		
+		
+		this.setCargado(true);
+		
+		
+	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
+	 														//tenemos que crear la escena(panel) de nuevo
+
+	 	primaryStage.setScene(juego);
+		   
+	});   
 	
- 
-    return selectedFile;
+	
+	VBox layout1 = new VBox(20);     
+	layout1.getChildren().addAll(label1,button1);
+	
+	return layout1;
 }
+
+
+
 
 
 //en caso de que se acceda a la variable desde distintas escenas
@@ -339,9 +317,6 @@ public boolean isParaGuardar() {
 public void setParaGuardar(boolean paraGuardar) {
 	this.paraGuardar = paraGuardar;
 }
-
-
-
 
 
 

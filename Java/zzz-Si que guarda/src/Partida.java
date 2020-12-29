@@ -42,6 +42,7 @@ import chesspresso.move.IllegalMoveException;
 
 public class Partida {
      private Game juego;
+     private GameModel modelo;
      private Position tablero;
      
      short movimientos[]=new short[10];
@@ -58,6 +59,8 @@ public class Partida {
     	 
          juego = new Game();
   
+         
+      
          
          juego.setTag(PGN.TAG_EVENT, "Partida de pruebas");
          juego.setTag(PGN.TAG_SITE, "mi caaassaaaa...");
@@ -126,16 +129,10 @@ public class Partida {
      }
 
      
-     public enum FormatoDeSalida {
-         BINARIO,
-         PGN
-     }
-     
- 
-     
-public void guardarEnUnArchivo(File archivo)  {
+     public void guardarEnUnArchivo() {
          
-    
+         File archivo = elegirUnArchivoParaGuardar();
+         
          if (archivo != null) {
              FileWriter escritor = null;
              try {
@@ -145,7 +142,6 @@ public void guardarEnUnArchivo(File archivo)  {
 //                 flujoDeSalida.close();
                  // O se puede tambien guardar haciendo uso directo de las funciones a tal efecto de la clase PGN.
                  // (a JavaFX parece que le sienta mejor esta manera)
-            	 
                  escritor = new FileWriter(archivo);
                  PGNWriter escritorPGN = new PGNWriter(escritor);
                  escritorPGN.write(juego.getModel());
@@ -153,71 +149,75 @@ public void guardarEnUnArchivo(File archivo)  {
                  } catch (IOException e1) {
                      e1.printStackTrace();
                  } finally {
-                	 
-                	 //este finaly es para suprimir el error que da a la hora de escribir en archivo 
-                	 //usando el PGNWritter,teniendo java 8 en el sistema y la version 11 jdk javafx da error NullPointerException.
-                	 //por la informacion vista para ser que el thead de java fx interfiere con la escritura de esta clase.
-                	 //para ello usamos esta excepcion
-                	 //aunque lo curioso es que aunque de excepcion deja guardar.
-                	 
                      if (escritor != null) {
                          try {
                              escritor.close();
                          } catch (IOException e1) {
                              e1.printStackTrace();
                          }
-                         catch(NullPointerException e) {
-                        	 System.out.print(" se ha guardado /n");
-                         }
                      }
                  }
              }
      }
-
+     private File elegirUnArchivoParaGuardar() {
+         final FileChooser selectorDeArchivos = new FileChooser();
+         selectorDeArchivos.getExtensionFilters().add(new FileChooser.ExtensionFilter("Partida de ajedrez", "*.pgn"));
+         return selectorDeArchivos.showSaveDialog(new Stage());
+     }
+  
     
      
-     public Game CargarDesdeUnArchivo(File archivo) {
+     public Game crearUnNuevoJuegoDesdeUnArchivo() {
          
-    	 Game cargado=new Game();
+         File archivo = elegirUnArchivoParaLeer();
          
-    
          if (archivo != null) {
              try {
                  DataInputStream flujoDeEntrada = new DataInputStream(new FileInputStream(archivo));
-                 
-                 
-                 /*Guardar de forma binaria
-                     GameModel modelo = new GameModel(flujoDeEntrada, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
-                 
-                  * */
-                  
-              
-                    PGNReader lectorPGN = new PGNReader(flujoDeEntrada, "?unNombre?");
-                     
-                    try {
-                         cargado= lectorPGN.parseGame(); //lee la siguiente partida que haya en el archivo PGN
-                     } 									 //lee 1 partida por cada vez que se ejecuta el parse(pasar por la linea)
-                    catch (PGNSyntaxError e) {
-                         // TODO Auto-generated catch block
-                         e.printStackTrace();
-                     }
-                 
-                 flujoDeEntrada.close();
+                 // Se puede recuperar creando un nuevo juego a partir de la lectura del contenido del archivo.
+//                 GameModel modelo = new GameModel(flujoDeEntrada, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
+//                 flujoDeEntrada.close();
+//                 return new Game(modelo);
+                 // O se puede tambien recuperar creando un nuevo juego mediante las funciones a tal efecto de la clase PGN.
+                PGNReader lectorPGN = new PGNReader(flujoDeEntrada, "?unNombre?");
+                 try {
+                     Game juego = lectorPGN.parseGame();
+                     flujoDeEntrada.close();
+                     return juego;
+                 } catch (PGNSyntaxError e) {
+                     e.printStackTrace();
+                 }
              }
              catch (FileNotFoundException e1) {
-                 // TODO Auto-generated catch block
                  e1.printStackTrace();
              }
              catch (IOException e2) {
-                 // TODO Auto-generated catch block
                  e2.printStackTrace();
              }
          }
-         
-         return cargado;
+         return null;
      }
+     private File elegirUnArchivoParaLeer() {
+         final FileChooser selectorDeArchivos = new FileChooser();
+         selectorDeArchivos.getExtensionFilters().add(new FileChooser.ExtensionFilter("Partida de ajedrez", "*.pgn"));
+         return selectorDeArchivos.showOpenDialog(new Stage());
+     }
+
+     
      
 
+
+
+
+
+	public GameModel getModelo() {
+		return modelo;
+	}
+
+
+	public void setModelo(GameModel modelo) {
+		this.modelo = modelo;
+	}
 
 
 	public Position getTablero() {
