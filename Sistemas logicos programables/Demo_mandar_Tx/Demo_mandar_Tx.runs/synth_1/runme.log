@@ -14,12 +14,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13380 
+INFO: Helper process launched with PID 9268 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 347.980 ; gain = 79.180
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 347.660 ; gain = 78.164
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TopDesign' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:14]
-INFO: [Synth 8-3491] module 'kcuart_tx' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd:13' bound to instance 'tx_recive' of component 'kcuart_tx' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:34]
+INFO: [Synth 8-3491] module 'kcuart_tx' declared at 'C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd:13' bound to instance 'tx_recive' of component 'kcuart_tx' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
 INFO: [Synth 8-638] synthesizing module 'kcuart_tx' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd:25]
 	Parameter INIT bound to: 16'b1110010011111111 
 INFO: [Synth 8-113] binding component instance 'mux1_lut' to cell 'LUT4' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd:84]
@@ -109,13 +109,13 @@ WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[0].count_lut ' is
 WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[1].count_lut ' is unsupported and ignored
 WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[2].count_lut ' is unsupported and ignored
 INFO: [Synth 8-256] done synthesizing module 'kcuart_tx' (1#1) [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/imports/FITXATEGIAK/kcuart_tx.vhd:25]
-WARNING: [Synth 8-614] signal 'en_16_x_baud' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
-WARNING: [Synth 8-614] signal 'time1' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
-WARNING: [Synth 8-614] signal 'time2' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
-WARNING: [Synth 8-614] signal 'fin' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
+WARNING: [Synth 8-614] signal 'en_16_x_baud' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:90]
+WARNING: [Synth 8-614] signal 'finbidali' is read in the process but is not in the sensitivity list [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:90]
+WARNING: [Synth 8-6014] Unused sequential element hurrengoa_reg was removed.  [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:99]
+WARNING: [Synth 8-3848] Net oraingoa in module/entity TopDesign does not have driver. [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:33]
 INFO: [Synth 8-256] done synthesizing module 'TopDesign' (2#1) [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:14]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 387.305 ; gain = 118.504
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 386.988 ; gain = 117.492
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -124,8 +124,9 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin tx_recive:send_character to constant 0 [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:37]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 387.305 ; gain = 118.504
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 386.988 ; gain = 117.492
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -149,22 +150,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MUXF5 => LUT3: 2 instances
   MUXF6 => LUT3: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 677.992 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 671.289 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "baud_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "en_16_x_baud" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -183,10 +184,8 @@ WARNING: [Synth 8-2887] Directive 'init' on 'complete_lut' is unsupported and ig
 WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[0].count_lut ' is unsupported and ignored
 WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[1].count_lut ' is unsupported and ignored
 WARNING: [Synth 8-2887] Directive 'init' on '\count_width_loop[2].count_lut ' is unsupported and ignored
-WARNING: [Synth 8-327] inferring latch for variable 'bidalibeharra_reg' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:34]
-WARNING: [Synth 8-327] inferring latch for variable 'bidali_reg' [C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.srcs/sources_1/imports/sources_1/new/TopDesign.vhd:34]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -202,12 +201,13 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 	   5 Input      7 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -221,12 +221,13 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 	   5 Input      7 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -244,16 +245,14 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "baud_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "en_16_x_baud" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[7]' (LD) to 'bidalibeharra_reg[4]'
-INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[6]' (LD) to 'bidalibeharra_reg[5]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\bidalibeharra_reg[5] )
-INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[4]' (LD) to 'bidalibeharra_reg[3]'
+INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[7]' (FDCE) to 'bidalibeharra_reg[4]'
+INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[6]' (FDCE) to 'bidalibeharra_reg[5]'
+INFO: [Synth 8-3886] merging instance 'bidalibeharra_reg[4]' (FDCE) to 'bidalibeharra_reg[3]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\bidalibeharra_reg[3] )
 WARNING: [Synth 8-3332] Sequential element (tx_recive/Tx_complete_reg) is unused and will be removed from module TopDesign.
-WARNING: [Synth 8-3332] Sequential element (bidalibeharra_reg[5]) is unused and will be removed from module TopDesign.
 WARNING: [Synth 8-3332] Sequential element (bidalibeharra_reg[3]) is unused and will be removed from module TopDesign.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -265,13 +264,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -283,7 +282,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -306,8 +305,9 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin tx_recive/ready_lut:I2 to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -320,7 +320,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -332,25 +332,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -373,50 +373,48 @@ Report Cell Usage:
 |5     |LUT3     |     2|
 |6     |LUT4     |    15|
 |7     |LUT5     |     4|
-|8     |LUT6     |     1|
-|9     |MULT_AND |     3|
-|10    |MUXCY    |     3|
-|11    |MUXF5    |     2|
-|12    |MUXF6    |     1|
-|13    |SRL16E   |     1|
-|14    |XORCY    |     3|
+|8     |MULT_AND |     3|
+|9     |MUXCY    |     3|
+|10    |MUXF5    |     2|
+|11    |MUXF6    |     1|
+|12    |SRL16E   |     1|
+|13    |XORCY    |     3|
+|14    |FDCE     |     4|
 |15    |FDE      |     5|
 |16    |FDRE     |    37|
-|17    |LD       |     4|
-|18    |IBUF     |     6|
-|19    |OBUF     |     1|
+|17    |IBUF     |     6|
+|18    |OBUF     |     1|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+------------+----------+------+
 |      |Instance    |Module    |Cells |
 +------+------------+----------+------+
-|1     |top         |          |   134|
+|1     |top         |          |   133|
 |2     |  tx_recive |kcuart_tx |    35|
 +------+------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 677.992 ; gain = 118.504
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 677.992 ; gain = 409.191
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 671.289 ; gain = 117.492
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 671.289 ; gain = 401.793
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 16 instances were transformed.
+  A total of 12 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 1 instances
   FDE => FDRE: 5 instances
-  LD => LDCE: 4 instances
   MULT_AND => LUT2: 3 instances
   MUXF5 => LUT3: 2 instances
   MUXF6 => LUT3: 1 instances
 
-65 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
+64 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:53 . Memory (MB): peak = 677.992 ; gain = 416.953
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 671.289 ; gain = 410.559
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mikel/Desktop/proyecto/producto/Sistemas logicos programables/Demo_mandar_Tx/Demo_mandar_Tx.runs/synth_1/TopDesign.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 677.992 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 23 13:51:39 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 671.289 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 28 20:43:33 2020...

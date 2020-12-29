@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 23 13:53:07 2020
+| Date         : Mon Dec 28 20:45:04 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TopDesign_methodology_drc_routed.rpt -rpx TopDesign_methodology_drc_routed.rpx
 | Design       : TopDesign
@@ -27,8 +27,7 @@ Table of Contents
 +-----------+----------+-----------------------------+------------+
 | Rule      | Severity | Description                 | Violations |
 +-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 43         |
-| TIMING-20 | Warning  | Non-clocked latch           | 4          |
+| TIMING-17 | Warning  | Non-clocked sequential cell | 47         |
 +-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -195,77 +194,77 @@ Related violations: <none>
 
 TIMING-17#33 Warning
 Non-clocked sequential cell  
-The clock pin en_16_x_baud_reg/C is not reached by a timing clock
+The clock pin bidalibeharra_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/Tx_bit_reg/C is not reached by a timing clock
+The clock pin bidalibeharra_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/Tx_run_reg/C is not reached by a timing clock
+The clock pin bidalibeharra_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/Tx_start_reg/C is not reached by a timing clock
+The clock pin bidalibeharra_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/Tx_stop_reg/C is not reached by a timing clock
+The clock pin en_16_x_baud_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/count_width_loop[0].register_bit/C is not reached by a timing clock
+The clock pin tx_recive/Tx_bit_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/count_width_loop[1].register_bit/C is not reached by a timing clock
+The clock pin tx_recive/Tx_run_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/count_width_loop[2].register_bit/C is not reached by a timing clock
+The clock pin tx_recive/Tx_start_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/delay14_srl/CLK is not reached by a timing clock
+The clock pin tx_recive/Tx_stop_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Warning
 Non-clocked sequential cell  
-The clock pin tx_recive/hot_state_reg/C is not reached by a timing clock
+The clock pin tx_recive/count_width_loop[0].register_bit/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Warning
 Non-clocked sequential cell  
+The clock pin tx_recive/count_width_loop[1].register_bit/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Warning
+Non-clocked sequential cell  
+The clock pin tx_recive/count_width_loop[2].register_bit/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Warning
+Non-clocked sequential cell  
+The clock pin tx_recive/delay14_srl/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Warning
+Non-clocked sequential cell  
+The clock pin tx_recive/hot_state_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Warning
+Non-clocked sequential cell  
 The clock pin tx_recive/pipeline_serial/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch bidali_reg cannot be properly analyzed as its control pin bidali_reg/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch bidalibeharra_reg[0] cannot be properly analyzed as its control pin bidalibeharra_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch bidalibeharra_reg[1] cannot be properly analyzed as its control pin bidalibeharra_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch bidalibeharra_reg[2] cannot be properly analyzed as its control pin bidalibeharra_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 

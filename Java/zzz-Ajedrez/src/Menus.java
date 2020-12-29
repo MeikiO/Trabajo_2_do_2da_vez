@@ -145,7 +145,11 @@ private Parent menuSeleccion(Stage primaryStage) {
  	
  	button1.setOnAction(e ->{
  	
- 	this.setCargado(false);	
+ 
+ 	this.setCargado(false);
+ 	Partida nueva=new Partida();
+	this.setPartida(nueva);
+	
  	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
  													   //tenemos que crear la escena(panel) de nuevo
  		
@@ -177,12 +181,6 @@ private Parent juego(Stage primaryStage) {
 	
 	Button button1= new Button("Pausa");
 	button1.setOnAction(e -> primaryStage.setScene(pausa));   
-	
-
-	if(!this.isCargado()) {
-		this.setPartida(new Partida()); //mejor aqui sino la partida cargada se reinicia	
-		
-	}
 	
 	
 	Pane pane = new Pane();	
@@ -238,10 +236,13 @@ private Parent pausa(Stage primaryStage) {
 	this.setParaGuardar(true);
 	
 	selectedFile=this.abrirArchivos(primaryStage);
+	
+	primaryStage.setScene(inicio);
+	
 	this.partida.guardarEnUnArchivo(selectedFile); 
 	
 
-	primaryStage.setScene(inicio);
+	
 		   
 	}); 
 	

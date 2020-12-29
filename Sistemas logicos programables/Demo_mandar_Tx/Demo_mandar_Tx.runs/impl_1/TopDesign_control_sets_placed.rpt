@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 23 13:52:33 2020
+| Date         : Mon Dec 28 20:44:27 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopDesign_control_sets_placed.rpt
 | Design       : TopDesign
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               6 |            3 |
+| No           | No                    | No                     |               2 |            2 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              32 |            9 |
-| Yes          | No                    | No                     |               5 |            3 |
-| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | No                    | No                     |               5 |            2 |
+| Yes          | No                    | Yes                    |               4 |            1 |
 | Yes          | Yes                   | No                     |               3 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -45,16 +45,16 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------+----------------------+------------------------+------------------+----------------+
-|          Clock Signal         |     Enable Signal    |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
-+-------------------------------+----------------------+------------------------+------------------+----------------+
-|  clk_IBUF_BUFG                |                      | tx_recive/R            |                1 |              1 |
-|  clk_IBUF_BUFG                |                      |                        |                2 |              2 |
-|  clk_IBUF_BUFG                | en_16_x_baud_reg_n_0 | tx_recive/R            |                1 |              3 |
-|  bidalibeharra_reg[2]_i_2_n_0 |                      |                        |                1 |              4 |
-|  clk_IBUF_BUFG                | en_16_x_baud_reg_n_0 |                        |                4 |              6 |
-|  clk_IBUF_BUFG                |                      | baud_count[31]_i_1_n_0 |                8 |             31 |
-+-------------------------------+----------------------+------------------------+------------------+----------------+
++----------------+--------------------------+------------------------+------------------+----------------+
+|  Clock Signal  |       Enable Signal      |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
++----------------+--------------------------+------------------------+------------------+----------------+
+|  clk_IBUF_BUFG |                          | tx_recive/R            |                1 |              1 |
+|  clk_IBUF_BUFG |                          |                        |                2 |              2 |
+|  clk_IBUF_BUFG | en_16_x_baud_reg_n_0     | tx_recive/R            |                1 |              3 |
+|  clk_IBUF_BUFG | bidalibeharra[5]_i_1_n_0 | reset_IBUF             |                1 |              4 |
+|  clk_IBUF_BUFG | en_16_x_baud_reg_n_0     |                        |                3 |              6 |
+|  clk_IBUF_BUFG |                          | baud_count[31]_i_1_n_0 |                8 |             31 |
++----------------+--------------------------+------------------------+------------------+----------------+
 
 
 +--------+-----------------------+

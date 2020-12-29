@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Wed Dec 23 13:53:08 2020
+| Date             : Mon Dec 28 20:45:05 2020
 | Host             : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command          : report_power -file TopDesign_power_routed.rpt -pb TopDesign_power_summary_routed.pb -rpx TopDesign_power_routed.rpx
 | Design           : TopDesign
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.382 |
-| Dynamic (W)              | 1.307 |
-| Device Static (W)        | 0.075 |
+| Total On-Chip Power (W)  | 0.452 |
+| Dynamic (W)              | 0.380 |
+| Device Static (W)        | 0.073 |
 | Effective TJA (C/W)      | 5.0   |
-| Max Ambient (C)          | 78.1  |
-| Junction Temperature (C) | 31.9  |
+| Max Ambient (C)          | 82.7  |
+| Junction Temperature (C) | 27.3  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,17 +49,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     0.105 |       99 |       --- |             --- |
-|   LUT as Logic          |     0.066 |       27 |     20800 |            0.13 |
-|   CARRY4                |     0.020 |        9 |      8150 |            0.11 |
-|   Register              |     0.014 |       46 |     41600 |            0.11 |
+| Slice Logic             |     0.095 |       95 |       --- |             --- |
+|   LUT as Logic          |     0.054 |       27 |     20800 |            0.13 |
+|   CARRY4                |     0.019 |        9 |      8150 |            0.11 |
+|   Register              |     0.016 |       46 |     41600 |            0.11 |
 |   BUFG                  |     0.006 |        1 |        32 |            3.13 |
-|   LUT as Shift Register |    <0.001 |        1 |      9600 |            0.01 |
-|   Others                |     0.000 |        8 |       --- |             --- |
-| Signals                 |     0.150 |       81 |       --- |             --- |
-| I/O                     |     1.051 |        7 |       106 |            6.60 |
-| Static Power            |     0.075 |          |           |                 |
-| Total                   |     1.382 |          |           |                 |
+|   Others                |     0.000 |        6 |       --- |             --- |
+|   LUT as Shift Register |     0.000 |        1 |      9600 |            0.01 |
+| Signals                 |     0.138 |       78 |       --- |             --- |
+| I/O                     |     0.147 |        7 |       106 |            6.60 |
+| Static Power            |     0.073 |          |           |                 |
+| Total                   |     0.452 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,9 +69,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.292 |       0.280 |      0.012 |
-| Vccaux    |       1.800 |     0.050 |       0.038 |      0.013 |
-| Vcco33    |       3.300 |     0.292 |       0.291 |      0.001 |
+| Vccint    |       1.000 |     0.263 |       0.253 |      0.010 |
+| Vccaux    |       1.800 |     0.017 |       0.005 |      0.013 |
+| Vcco33    |       3.300 |     0.037 |       0.036 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -136,8 +136,8 @@ Table of Contents
 +-------------+-----------+
 | Name        | Power (W) |
 +-------------+-----------+
-| TopDesign   |     1.307 |
-|   tx_recive |     0.038 |
+| TopDesign   |     0.380 |
+|   tx_recive |     0.005 |
 +-------------+-----------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Dec 23 13:51:39 2020
+| Date         : Mon Dec 28 20:43:33 2020
 | Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TopDesign_utilization_synth.rpt -pb TopDesign_utilization_synth.pb
 | Design       : TopDesign
@@ -36,8 +36,8 @@ Table of Contents
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    1 |     0 |           |       |
 | Slice Registers            |   46 |     0 |     41600 |  0.11 |
-|   Register as Flip Flop    |   42 |     0 |     41600 |  0.10 |
-|   Register as Latch        |    4 |     0 |     41600 | <0.01 |
+|   Register as Flip Flop    |   46 |     0 |     41600 |  0.11 |
+|   Register as Latch        |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                   |    0 |     0 |      8150 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -159,10 +159,9 @@ Table of Contents
 | IBUF     |    6 |                  IO |
 | LUT3     |    5 |                 LUT |
 | LUT5     |    4 |                 LUT |
-| LDCE     |    4 |        Flop & Latch |
+| FDCE     |    4 |        Flop & Latch |
 | SRL16E   |    1 |  Distributed Memory |
 | OBUF     |    1 |                  IO |
-| LUT6     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

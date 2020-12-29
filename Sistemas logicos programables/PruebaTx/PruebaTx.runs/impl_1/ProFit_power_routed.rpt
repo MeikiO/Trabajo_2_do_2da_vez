@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Thu Dec 24 12:50:58 2020
+| Date             : Mon Dec 28 19:37:58 2020
 | Host             : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
 | Command          : report_power -file ProFit_power_routed.rpt -pb ProFit_power_summary_routed.pb -rpx ProFit_power_routed.rpx
 | Design           : ProFit
@@ -49,12 +49,12 @@ Table of Contents
 +--------------+-----------+----------+-----------+-----------------+
 | On-Chip      | Power (W) | Used     | Available | Utilization (%) |
 +--------------+-----------+----------+-----------+-----------------+
-| Slice Logic  |     0.006 |        6 |       --- |             --- |
+| Slice Logic  |     0.006 |       12 |       --- |             --- |
 |   BUFG       |     0.006 |        1 |        32 |            3.13 |
-|   Others     |     0.000 |        4 |       --- |             --- |
+|   Others     |     0.000 |       10 |       --- |             --- |
 |   Register   |     0.000 |        1 |     41600 |           <0.01 |
 | Signals      |     0.005 |        3 |       --- |             --- |
-| I/O          |     0.004 |        8 |       106 |            7.55 |
+| I/O          |     0.004 |       35 |       106 |           33.02 |
 | Static Power |     0.068 |          |           |                 |
 | Total        |     0.084 |          |           |                 |
 +--------------+-----------+----------+-----------+-----------------+
