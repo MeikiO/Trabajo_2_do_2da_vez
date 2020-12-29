@@ -65,7 +65,7 @@ public class Partida {
          calendario.set(2020, 12, 22);
          juego.setTag(PGN.TAG_DATE,
          PGN.dateToPGNDate(calendario.getTime()));
-         juego.setTag(PGN.TAG_ROUND, "?!?");
+
          juego.setTag(PGN.TAG_WHITE, "Benzirpi Mirvento");
          juego.setTag(PGN.TAG_BLACK, "Eloiza Batiati");
          
@@ -87,6 +87,20 @@ public class Partida {
      }
 
 
+     
+     public void ponerTagsIniciales(String evento,String sitio,String blanco,String negro) {
+    	 juego.setTag(PGN.TAG_EVENT, evento);
+         juego.setTag(PGN.TAG_SITE, sitio);
+         Calendar calendario = Calendar.getInstance();
+         calendario.set(2020, 12, 22);
+         juego.setTag(PGN.TAG_DATE,
+         PGN.dateToPGNDate(calendario.getTime()));
+
+         juego.setTag(PGN.TAG_WHITE, blanco);
+         juego.setTag(PGN.TAG_BLACK, negro);
+         
+     }
+     
      
      
      private void recrearMovientos() {
@@ -126,10 +140,7 @@ public class Partida {
      }
 
      
-     public enum FormatoDeSalida {
-         BINARIO,
-         PGN
-     }
+
      
  
      
@@ -143,7 +154,8 @@ public void guardarEnUnArchivo(File archivo)  {
 //                 DataOutputStream flujoDeSalida = new DataOutputStream(new FileOutputStream(archivo));
 //                 juego.save(flujoDeSalida, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
 //                 flujoDeSalida.close();
-                 // O se puede tambien guardar haciendo uso directo de las funciones a tal efecto de la clase PGN.
+ 
+            	 // O se puede tambien guardar haciendo uso directo de las funciones a tal efecto de la clase PGN.
                  // (a JavaFX parece que le sienta mejor esta manera)
             	 
                  escritor = new FileWriter(archivo);

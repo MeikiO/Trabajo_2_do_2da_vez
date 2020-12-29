@@ -15,7 +15,6 @@ public class MiGestorDePartida implements GameModelChangeListener {
     
     public MiGestorDePartida(TextField informacion) {
         this.informacion = informacion;
-      
     }
    
     @Override

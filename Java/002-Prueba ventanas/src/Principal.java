@@ -98,6 +98,8 @@ private void contenido() {
      PasswordField pwBox = new PasswordField();
      grid.add(pwBox, 1, 2);
      
+     
+    
 }
 
 
