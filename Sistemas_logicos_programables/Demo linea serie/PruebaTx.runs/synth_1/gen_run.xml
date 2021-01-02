@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xa7a35tcpg236-1I" LaunchTime="1609437552">
+  <File Type="PA-TCL" Name="UART_controller.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="UART_controller_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="UART_controller.vds"/>
+  <File Type="RDS-UTIL" Name="UART_controller_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="UART_controller_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="UART_controller.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="UART_controller_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="UART_controller_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/UART_controller_files/UART.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/sources_1/imports/UART_controller_files/UART.vhd"/>
+        <Attr Name="ImportTime" Val="1609350958"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/UART_controller_files/UART_rx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/sources_1/imports/UART_controller_files/UART_rx.vhd"/>
+        <Attr Name="ImportTime" Val="1609350958"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/UART_controller_files/UART_tx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/sources_1/imports/UART_controller_files/UART_tx.vhd"/>
+        <Attr Name="ImportTime" Val="1609350958"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/UART_controller_files/button_debounce.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/sources_1/imports/UART_controller_files/button_debounce.vhd"/>
+        <Attr Name="ImportTime" Val="1609350958"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/UART_controller_files/UART_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/sources_1/imports/UART_controller_files/UART_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1609354998"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="UART_controller"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/constrs_1/imports/UART_controller_files/constraints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/constrs_1/imports/UART_controller_files/constraints.xdc"/>
+        <Attr Name="ImportTime" Val="1609355644"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/constrs_1/new/main.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PrimerasPruebas/PrimerasPruebas.srcs/constrs_1/new/main.xdc"/>
+        <Attr Name="ImportTime" Val="1609354144"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
