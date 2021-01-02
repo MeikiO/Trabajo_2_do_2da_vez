@@ -1,3 +1,4 @@
+import java.awt.Panel;
 import java.io.File;
 import java.io.IOException;
 
@@ -9,8 +10,11 @@ import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -42,6 +46,7 @@ public Partida partida;
 
 public boolean paraGuardar;
 public File selectedFile;
+
 
 
 /*
@@ -117,6 +122,7 @@ private  GridPane setBasePanel(Stage primaryStage) {
      grid.setHgap(10);
      grid.setVgap(20);
      grid.setPadding(new Insets(30, 50, 50, 50));
+     
      
     primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("imagen/icon.png")));
      
@@ -285,7 +291,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	  	
 	  	this.setPartida(nueva);
 	 	
-	  	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
+	  	juego=new Scene(this.juego(primaryStage),640,550); // en vez de crear partida nueva 
 	  													   //tenemos que crear la escena(panel) de nuevo
 	  		
 	  	primaryStage.setScene(juego);
@@ -323,6 +329,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 
 
 
+
 private Parent juego(Stage primaryStage) {
 	// TODO Auto-generated method stub
 	
@@ -332,6 +339,7 @@ private Parent juego(Stage primaryStage) {
 	Button button1= new Button("Pausa");
 	button1.setOnAction(e -> primaryStage.setScene(pausa));   
 	grid.add(button1, 0, 1);
+	
 	
 	Pane pane = new Pane();	
 	pane=this.enseñarPartida(partida);
@@ -354,7 +362,19 @@ private Pane enseñarPartida(Partida partida2) {
 	//hacerlo aqui mismo, ya que hasi el proceso esta accesible
 	//para las escenas de javaFx
    
-	GameBrowser buscador = new GameBrowser(partida.getJuego()); 
+	
+	Canvas canvas = new Canvas(60, 30);
+	GraphicsContext gc = canvas.getGraphicsContext2D();
+	
+	gc.setStroke(Color.GREEN);
+	    // Dibujar un rectángulo vacio
+	gc.strokeRoundRect(0, 0, 30, 30, 10, 10);
+	gc.strokeRoundRect(30, 0, 30, 30, 10, 10);
+	
+	
+	
+	
+    GameBrowser buscador = new GameBrowser(partida.getJuego()); 
     buscador.setEditable(true); // con esto podemos editar las posiciones del tablero a mano
 	 
    
@@ -365,12 +385,13 @@ private Pane enseñarPartida(Partida partida2) {
    TextField txtInformacion = new TextField();
    
   
-   MiGestorDePartida gestor = new MiGestorDePartida(txtInformacion);
-    partida.getJuego().addChangeListener(gestor); 
+   
+   MiGestorDePartida gestor = new MiGestorDePartida(txtInformacion,gc);
+   partida.getJuego().addChangeListener(gestor); 
    
 	 
    VBox layout1 = new VBox(20);
-   layout1.getChildren().addAll(swingNode, txtInformacion);
+   layout1.getChildren().addAll(canvas,swingNode, txtInformacion);
    
    return layout1;
 }
