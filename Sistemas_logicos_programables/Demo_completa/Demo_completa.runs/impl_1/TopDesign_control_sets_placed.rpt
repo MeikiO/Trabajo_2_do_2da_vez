@@ -1,0 +1,86 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Fri Jan  1 20:36:13 2021
+| Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TopDesign_control_sets_placed.rpt
+| Design       : TopDesign
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    19 |
+| Unused register locations in slices containing registers |    78 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            3 |
+| No           | No                    | Yes                    |              62 |           22 |
+| No           | Yes                   | No                     |              45 |           15 |
+| Yes          | No                    | No                     |               6 |            1 |
+| Yes          | No                    | Yes                    |              18 |            7 |
+| Yes          | Yes                   | No                     |              41 |           11 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------+-----------------------------------------------+------------------------------------------+------------------+----------------+
+|                 Clock Signal                |                 Enable Signal                 |             Set/Reset Signal             | Slice Load Count | Bel Load Count |
++---------------------------------------------+-----------------------------------------------+------------------------------------------+------------------+----------------+
+|  component13/receiver/elementu_d_reg[1]_P_0 |                                               | component13/receiver/elementu_d_reg[1]_P |                1 |              1 |
+|  component14/elementu_d_reg[1]_P            |                                               | component14/elementu_d_reg[1]_C          |                1 |              1 |
+|  clk_IBUF_BUFG                              | component4/derecha                            | reset_IBUF                               |                1 |              1 |
+|  clk_IBUF_BUFG                              | component13/transmitter/baud_rate_clk_reg_n_0 | reset_IBUF                               |                1 |              1 |
+|  clk_IBUF_BUFG                              | component4/D[0]                               | reset_IBUF                               |                1 |              1 |
+|  component3/izquierda_reg                   |                                               | reset_IBUF                               |                1 |              3 |
+|  component3/izquierda_reg                   |                                               | component14/elementu_d_reg[1]_C          |                3 |              4 |
+|  component3/izquierda_reg                   |                                               | component14/elementu_d_reg[1]_P          |                3 |              4 |
+|  clk_IBUF_BUFG                              | component13/receiver/bit_duration_count       | reset_IBUF                               |                1 |              4 |
+|  component2/CLK                             |                                               | reset_IBUF                               |                2 |              5 |
+|  component3/izquierda_reg                   | component1/elementu_i                         | reset_IBUF                               |                2 |              5 |
+|  component3/izquierda_reg                   | component1/fin1                               | reset_IBUF                               |                1 |              5 |
+|  clk_IBUF_BUFG                              |                                               |                                          |                3 |              6 |
+|  clk_IBUF_BUFG                              | component13/transmitter/stored_data           |                                          |                1 |              6 |
+|  clk_IBUF_BUFG                              | component4/E[0]                               | reset_IBUF                               |                2 |              6 |
+|  clk_IBUF_BUFG                              | component13/receiver/rx_data_out[7]_i_1_n_0   | reset_IBUF                               |                1 |              8 |
+|  clk_IBUF_BUFG                              | component10/count0_carry__0_n_3               | component10/count[0]_i_1_n_0             |                4 |             14 |
+|  clk_IBUF_BUFG                              | component11/count0_carry__0_n_3               | component11/count[0]_i_1__0_n_0          |                4 |             14 |
+|  clk_IBUF_BUFG                              |                                               | reset_IBUF                               |               26 |             89 |
++---------------------------------------------+-----------------------------------------------+------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     5 |
+| 3      |                     1 |
+| 4      |                     3 |
+| 5      |                     3 |
+| 6      |                     3 |
+| 8      |                     1 |
+| 14     |                     2 |
+| 16+    |                     1 |
++--------+-----------------------+
+
+
