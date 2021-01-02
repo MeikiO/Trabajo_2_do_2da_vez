@@ -14,7 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -37,7 +39,7 @@ public class Menus extends Application {
 public Scene inicio, seleccion,cargarPartida,juego,pausa,terminacion;
 public GridPane grid;
 public Partida partida;
-public boolean cargado;
+
 public boolean paraGuardar;
 public File selectedFile;
 
@@ -123,9 +125,11 @@ private  GridPane setBasePanel(Stage primaryStage) {
  	// create a background fill for this node from the tile image
  	BackgroundPosition backgroundPosition = new BackgroundPosition(
  			Side.LEFT, 0, false, Side.TOP, 0, false);
+ 	
  	BackgroundImage backgroundImage = new BackgroundImage(tile,
  			BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
  			backgroundPosition, BackgroundSize.DEFAULT);
+ 	
  	Background background = new Background(backgroundImage);
  	
  	
@@ -157,9 +161,11 @@ private Parent menuInicio(Stage primaryStage) {
 		
 		this.setParaGuardar(false);
 		
+		
 		selectedFile=this.abrirArchivos(primaryStage);
         
-        Partida cargada=new Partida();
+      
+		Partida cargada=new Partida();
 
         Game loaded=cargada.CargarDesdeUnArchivo(selectedFile);
 
@@ -167,10 +173,7 @@ private Parent menuInicio(Stage primaryStage) {
 		
 		this.setPartida(cargada);
 		
-		
-		this.setCargado(true);
-		
-		
+	
 	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
 	 														//tenemos que crear la escena(panel) de nuevo
 
@@ -240,12 +243,42 @@ private Parent menuSeleccion(Stage primaryStage) {
 	     grid.add(jugadornegro , 1, 4);
 	     
 	     
+	     
+	   //A radio button para el tiempo de la plaka
+	     
+	     final ToggleGroup group = new ToggleGroup();
 
+	     RadioButton rb1 = new RadioButton("33");
+	     rb1.setToggleGroup(group);
+	     rb1.setSelected(true);
+	     grid.add(rb1, 0, 5);
+	     
+	     //A radio button with the specified label
+	     RadioButton rb2 = new RadioButton("99");
+	     rb2.setToggleGroup(group);
+	      grid.add(rb2, 1, 5);
+	     
+	     
+	     
 	  	Button button1= new Button("Jugar");
 	  	
 	  	button1.setOnAction(e ->{
 
-	  	this.setCargado(false);
+	  	
+	  	System.out.println(group.selectedToggleProperty().toString());
+	  		
+	  	LineaSerie aMandar=new LineaSerie();
+	  	
+	  	if(group.selectedToggleProperty().toString().contains("'33'")) {
+	  		aMandar.mandar("a");
+	  	}
+	  	else {
+	  		aMandar.mandar("b");
+	  	}
+	  	
+	  		
+	  		
+
 	  	Partida nueva=new Partida();
 	 	
 	  	nueva.ponerTagsIniciales(event.getText(), lugar.getText(), jugadorblanco.getText(), jugadornegro.getText());
@@ -263,6 +296,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	  	grid.add(button1, 0, 6);
 	  		
 	  
+	  	
 	  	
 	 	Button button2= new Button("Volver al inicio");
 	  	button2.setOnAction(e -> {
@@ -435,15 +469,6 @@ public void setPartida(Partida partida) {
 }
 
 
-public boolean isCargado() {
-	return cargado;
-}
-
-
-public void setCargado(boolean cargado) {
-	this.cargado = cargado;
-}
-
 
 public boolean isParaGuardar() {
 	return paraGuardar;
@@ -457,8 +482,4 @@ public void setParaGuardar(boolean paraGuardar) {
 
 
 
-
-
-
-    
 }

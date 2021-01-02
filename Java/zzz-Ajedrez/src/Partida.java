@@ -54,11 +54,10 @@ public class Partida {
 
      public Partida()
      {
-    	 
-    	 
+
          juego = new Game();
   
-         
+       /* 
          juego.setTag(PGN.TAG_EVENT, "Partida de pruebas");
          juego.setTag(PGN.TAG_SITE, "mi caaassaaaa...");
          Calendar calendario = Calendar.getInstance();
@@ -68,11 +67,13 @@ public class Partida {
 
          juego.setTag(PGN.TAG_WHITE, "Benzirpi Mirvento");
          juego.setTag(PGN.TAG_BLACK, "Eloiza Batiati");
-         
-         //juego.setTag(PGN.TAG_RESULT, "1. d4 d5 2. e4 dxe4 3. Nf3 Qd5 4. Ne5");
+          
+         juego.setTag(PGN.TAG_RESULT, "1. d4 d5 2. e4 dxe4 3. Nf3 Qd5 4. Ne5");
+         */ 
          
          //este no sirve para que se muevan, para que se se vea el resultado
          // y sea interactivo tienes que moverlos
+        
          //movimientos[0]= Move.getRegularMove(Chess.E2, Chess.E4,false);
          
          
@@ -89,15 +90,48 @@ public class Partida {
 
      
      public void ponerTagsIniciales(String evento,String sitio,String blanco,String negro) {
-    	 juego.setTag(PGN.TAG_EVENT, evento);
+    	
+    	 juego.setTag(PGN.TAG_RESULT, "");
+    	 juego.setTag(PGN.TAG_ROUND, "");
+    	 
+    	
+    	 if(evento.isEmpty()) {
+    		 evento="partida";
+    	 }
+    	juego.setTag(PGN.TAG_EVENT, evento);
+    	 
+    	 
+    	 if(sitio.isEmpty()) {
+    		 sitio="aqui";
+    	 }
          juego.setTag(PGN.TAG_SITE, sitio);
+         
+         
          Calendar calendario = Calendar.getInstance();
          calendario.set(2020, 12, 22);
          juego.setTag(PGN.TAG_DATE,
          PGN.dateToPGNDate(calendario.getTime()));
 
+         
+         
+         if(blanco.isEmpty()) {
+        	 blanco="Jugador Blanco";
+         }
+         
          juego.setTag(PGN.TAG_WHITE, blanco);
+         
+         juego.setTag(PGN.TAG_WHITE_ELO, "0");
+         
+         
+         
+         if(negro.isEmpty()) {
+        	 negro="Jugador Negro";
+         }
+         
          juego.setTag(PGN.TAG_BLACK, negro);
+         
+         juego.setTag(PGN.TAG_BLACK_ELO, "0");
+         
          
      }
      
@@ -198,7 +232,7 @@ public void guardarEnUnArchivo(File archivo)  {
                  DataInputStream flujoDeEntrada = new DataInputStream(new FileInputStream(archivo));
                  
                  
-                 /*Guardar de forma binaria
+                 /*Guardar de otra manera
                      GameModel modelo = new GameModel(flujoDeEntrada, GameHeaderModel.MODE_STANDARD_TAGS, GameMoveModel.MODE_EVERYTHING);
                  
                   * */

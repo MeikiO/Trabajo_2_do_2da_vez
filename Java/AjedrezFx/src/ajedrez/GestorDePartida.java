@@ -1,22 +1,21 @@
+package ajedrez;
 
 import chesspresso.game.GameModelChangeListener;
-import chesspresso.Chess;
 import chesspresso.game.Game;
 import chesspresso.game.GameHeaderModel;
 import chesspresso.game.GameMoveModel;
 import chesspresso.move.Move;
-import javafx.scene.control.TextField;
 
-public class MiGestorDePartida implements GameModelChangeListener {
+public class GestorDePartida implements GameModelChangeListener {
 
-    private TextField informacion;
-    int i=0;
-
+    private InterfazFxParaJugar pantallaGrafica;
     
-    public MiGestorDePartida(TextField informacion) {
-        this.informacion = informacion;
+    
+    public GestorDePartida(InterfazFxParaJugar pantalla) {
+        this.pantallaGrafica = pantalla;
     }
-   
+    
+  
     @Override
     public void headerModelChanged(Game game) {
         System.out.println(game.getHeaderString(0) + game.getHeaderString(1));
@@ -33,34 +32,21 @@ public class MiGestorDePartida implements GameModelChangeListener {
     public void moveModelChanged(Game game) {
         System.out.println("[" + game.getCurrentMoveNumber() + " -- " + game.getCurNode() + "]");
 
-      
-        
         GameMoveModel movimientos = game.getModel().getMoveModel();
         short ultimoMovimiento = movimientos.getMove(game.getCurNode());
-
         String texto = "El último movimiento ha sido " + Move.getString(ultimoMovimiento);
-        System.out.println(texto);
-        
-    
 
-        Move ultimo= game.getLastMove(); //cogemos el ultimo moviento
-        ultimo.isWhiteMove(); //miramos si es blanco
-        
+        Move ultimo = game.getLastMove();
         if(ultimo.isWhiteMove()) {
             texto = texto + " y lo han movido las blancas";
         }
         else {
-        	 texto = texto + " y lo han movido las negras";
+            texto = texto + " y lo han movido las negras";
         }
         
-      
         System.out.println(texto);
-        informacion.setText(texto);
-        
-        
-        LineaSerie enviador=new LineaSerie();
-        enviador.mandar("a");
-        
+        pantallaGrafica.setInformacion(texto);
     }
+
     
 }
