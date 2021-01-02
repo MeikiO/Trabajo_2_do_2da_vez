@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1609529638">
-  <File Type="PWROPT-DRC" Name="TopDesign_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="TopDesign_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="TopDesign_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="TopDesign_power_routed.rpx"/>
   <File Type="PA-TCL" Name="TopDesign.tcl"/>
-  <File Type="OPT-HWDEF" Name="TopDesign.hwdef"/>
+  <File Type="INIT-TIMING" Name="TopDesign_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="TopDesign_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="TopDesign_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="TopDesign.vdi"/>
   <File Type="OPT-DCP" Name="TopDesign_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="TopDesign.hwdef"/>
   <File Type="OPT-DRC" Name="TopDesign_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="TopDesign_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="TopDesign_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="TopDesign_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="TopDesign_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="TopDesign_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="TopDesign.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="TopDesign_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="TopDesign.drc"/>
+  <File Type="BG-BIN" Name="TopDesign.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="TopDesign_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="TopDesign.msk"/>
+  <File Type="BG-DRC" Name="TopDesign.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TopDesign_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="TopDesign.bgn"/>
+  <File Type="BITSTR-MSK" Name="TopDesign.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TopDesign_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="TopDesign.bgn"/>
   <File Type="ROUTE-PWR" Name="TopDesign_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="TopDesign_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="TopDesign_route_status.rpt"/>
@@ -171,9 +171,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
