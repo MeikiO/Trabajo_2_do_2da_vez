@@ -1,6 +1,5 @@
 
 import chesspresso.game.GameModelChangeListener;
-import chesspresso.Chess;
 import chesspresso.game.Game;
 import chesspresso.game.GameHeaderModel;
 import chesspresso.game.GameMoveModel;
@@ -63,9 +62,7 @@ public class MiGestorDePartida implements GameModelChangeListener {
         
         
         LineaSerie enviador=new LineaSerie();
-        String leido=enviador.leer();
-        System.out.print(leido);
-        
+        String leido=enviador.leer();        
         this.dibujar_canvas(leido);
         
         

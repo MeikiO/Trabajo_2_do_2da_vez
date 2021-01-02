@@ -1,25 +1,22 @@
 
 
-import java.io.DataInput;
+
 import java.io.DataInputStream;
-import java.io.DataOutput;
-import java.io.DataOutputStream;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+
 import java.util.Calendar;
 
 
 
 
 
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 
 import chesspresso.Chess;
@@ -33,8 +30,7 @@ import chesspresso.game.GameModel;
 import chesspresso.game.GameMoveModel;
 
 import chesspresso.position.Position;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+
 import chesspresso.move.Move;
 import chesspresso.move.IllegalMoveException;
 

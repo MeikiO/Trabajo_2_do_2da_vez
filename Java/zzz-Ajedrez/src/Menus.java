@@ -1,23 +1,23 @@
-import java.awt.Panel;
+
 import java.io.File;
-import java.io.IOException;
+
 
 import chesspresso.game.Game;
-import chesspresso.game.GameModel;
+
 import chesspresso.game.view.GameBrowser;
 import javafx.application.Application;
 import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
+
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -31,10 +31,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -250,7 +247,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	     
 	     
 	     
-	   //A radio button para el tiempo de la plaka
+	   //radio button para el tiempo del reloj de la plaka
 	     
 	     final ToggleGroup group = new ToggleGroup();
 
@@ -259,7 +256,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	     rb1.setSelected(true);
 	     grid.add(rb1, 0, 5);
 	     
-	     //A radio button with the specified label
+	     
 	     RadioButton rb2 = new RadioButton("99");
 	     rb2.setToggleGroup(group);
 	      grid.add(rb2, 1, 5);
@@ -271,6 +268,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	  	button1.setOnAction(e ->{
 
 	  	
+	  		
 	  	System.out.println(group.selectedToggleProperty().toString());
 	  		
 	  	LineaSerie aMandar=new LineaSerie();
@@ -409,6 +407,7 @@ private Parent pausa(Stage primaryStage) {
 	button1.setOnAction(e -> primaryStage.setScene(juego));   
 	grid.add(button1, 0, 0);
 
+	
 	Button button3= new Button("Save game");
 	button3.setOnAction(e -> {
 		
@@ -426,11 +425,8 @@ private Parent pausa(Stage primaryStage) {
 	
 	
 	Button button4= new Button("Resign");
-	//acabar la partida y borrar la partida guardada que habia antes   
-	
 	button4.setOnAction(e -> {
 		
-
 	primaryStage.setScene(inicio);
 		   
 	}); 
