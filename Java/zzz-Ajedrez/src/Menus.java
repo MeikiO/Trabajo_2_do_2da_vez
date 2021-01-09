@@ -339,6 +339,8 @@ private Parent juego(Stage primaryStage) {
 	grid.add(button1, 0, 1);
 	
 	
+	
+	
 	Pane pane = new Pane();	
 	pane=this.enseñarPartida(partida);
 	grid.add(pane, 0, 2);

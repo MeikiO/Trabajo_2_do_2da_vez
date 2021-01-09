@@ -1,0 +1,11 @@
+[Event "partida"]
+[Site "aqui"]
+[Date "2021.00.22"]
+[Round ""]
+[White "Jugador Blanco"]
+[Black "Jugador Negro"]
+[Result ""]
+[WhiteElo "0"]
+[BlackElo "0"]
+
+1. d4 f5 (1... Nc6 2. d5 Nd4 3. Qd3 (3. Qxd4 b5 4. Qb6 axb6 ) ) 
