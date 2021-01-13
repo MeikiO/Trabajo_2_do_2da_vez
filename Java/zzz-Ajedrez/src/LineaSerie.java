@@ -37,8 +37,7 @@ public class LineaSerie {
             }
             else {
                puerto = puertosDisponibles[numeroElegido];
-                //System.out.println("Trabajando con el puerto [" + numeroElegido + "]  " + puerto.getSystemPortName());
-                
+       
             }    
         }
         

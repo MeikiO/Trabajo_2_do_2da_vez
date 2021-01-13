@@ -46,8 +46,8 @@ public class MiGestorDePartida implements GameModelChangeListener {
         
     
 
-        Move ultimo= game.getLastMove(); //cogemos el ultimo moviento
-        ultimo.isWhiteMove(); //miramos si es blanco
+        Move ultimo= game.getLastMove(); 
+        ultimo.isWhiteMove(); 
         
         if(ultimo.isWhiteMove()) {
             texto = texto + " y lo han movido las blancas";
@@ -81,14 +81,12 @@ public class MiGestorDePartida implements GameModelChangeListener {
 	    	    gc.fillRoundRect(0,0, 30, 30, 0, 0);
 	    	    
 	    	    gc.setStroke(Color.GREEN);
-	    	    // Dibujar un rectángulo vacio
 	    	    gc.strokeRoundRect(30, 0, 30, 30, 10, 10);
 				break;
 			}
 			case "d":
 			{   
 				gc.setStroke(Color.GREEN);
-	    	    // Dibujar un rectángulo vacio
 	    	    gc.strokeRoundRect(0, 0, 30, 30, 10, 10);
 	    	    
 	    	    
@@ -103,14 +101,12 @@ public class MiGestorDePartida implements GameModelChangeListener {
 	    	    gc.fillRoundRect(0,0, 30, 30, 0, 0);
 	    	    
 	    	    gc.setStroke(Color.RED);
-	    	    // Dibujar un rectángulo vacio
 	    	    gc.strokeRoundRect(30, 0, 30, 30, 10, 10);
 				break;
 			}
 			case "h":
 			{
 				gc.setStroke(Color.RED);
-	    	    // Dibujar un rectángulo vacio
 	    	    gc.strokeRoundRect(0, 0, 30, 30, 10, 10);
 	    	    
 	    	    
@@ -121,7 +117,6 @@ public class MiGestorDePartida implements GameModelChangeListener {
 
 			default:{
 		 	    gc.setStroke(Color.GREEN);
-	    	    // Dibujar un rectángulo vacio
 		 	   gc.strokeRoundRect(0, 0, 30, 30, 10, 10);
 	    	    gc.strokeRoundRect(30, 0, 30, 30, 10, 10);
 				

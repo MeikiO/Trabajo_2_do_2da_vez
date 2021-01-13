@@ -75,33 +75,17 @@ public void start(Stage primaryStage) {
 primaryStage.setTitle("Juego Ajedrez");
 
 
-//Scene 1
-
 inicio= new Scene(this.menuInicio(primaryStage), 250, 180);
                
-//Scene 2
 
 seleccion= new Scene(this.menuSeleccion(primaryStage), 350, 300); 
 
-
-//scene 3
-
-
-//scene 4
-
-//juego=new Scene(this.juego(primaryStage),600,500); 
-
-//este se crea cada vez que accedamos al juego
-
-
-//scene 5
 
 pausa=new Scene(this.pausa(primaryStage),250,180);
 
 
 primaryStage.setScene(inicio);
 
-//primaryStage.setScene(juego);
 
 
 primaryStage.show();
@@ -110,9 +94,7 @@ primaryStage.show();
 
 
 private  GridPane setBasePanel(Stage primaryStage) {
-	// TODO Auto-generated method stub
-   
-	//el grid es el contenedor para poner todos los demas contenidos
+
 	
 	grid = new GridPane();
      grid.setAlignment(Pos.CENTER);
@@ -125,7 +107,7 @@ private  GridPane setBasePanel(Stage primaryStage) {
      
  	Image tile = new Image(getClass().getResourceAsStream("imagen/imagen.jpg"));
  	
- 	// create a background fill for this node from the tile image
+
  	BackgroundPosition backgroundPosition = new BackgroundPosition(
  			Side.LEFT, 0, false, Side.TOP, 0, false);
  	
@@ -136,8 +118,7 @@ private  GridPane setBasePanel(Stage primaryStage) {
  	Background background = new Background(backgroundImage);
  	
  	
- 	// apply that background fill
- 	
+
  	grid.setBackground(background);
      
      
@@ -177,8 +158,7 @@ private Parent menuInicio(Stage primaryStage) {
 		this.setPartida(cargada);
 		
 	
-	 	juego=new Scene(this.juego(primaryStage),600,500); // en vez de crear partida nueva 
-	 														//tenemos que crear la escena(panel) de nuevo
+	 	juego=new Scene(this.juego(primaryStage),600,500); 
 
 	 	primaryStage.setScene(juego);
 		   
@@ -206,21 +186,15 @@ private Parent menuInicio(Stage primaryStage) {
 
 
 private Parent menuSeleccion(Stage primaryStage) {
-	// TODO Auto-generated method stub
-	
-	//añadimos contenido haciendo add al grid
+
 	
 	grid = this.setBasePanel(primaryStage);
 
-	// TODO Auto-generated method stub
-	
-		//añadimos contenido haciendo add al grid
+
 		
 	     Label label1 = new Label("Event:");
 	    
-	   
-	    // label1.setTextFill(Color.BLANCHEDALMOND);
-	     //label1.setFont(new Font("Arial", 24));
+
 	     grid.add(label1, 0, 1);
 
 	     TextField event = new TextField();
@@ -247,7 +221,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	     
 	     
 	     
-	   //radio button para el tiempo del reloj de la plaka
+
 	     
 	     final ToggleGroup group = new ToggleGroup();
 
@@ -289,8 +263,7 @@ private Parent menuSeleccion(Stage primaryStage) {
 	  	
 	  	this.setPartida(nueva);
 	 	
-	  	juego=new Scene(this.juego(primaryStage),640,550); // en vez de crear partida nueva 
-	  													   //tenemos que crear la escena(panel) de nuevo
+	  	juego=new Scene(this.juego(primaryStage),640,550); 
 	  		
 	  	primaryStage.setScene(juego);
 	  	
@@ -356,13 +329,8 @@ private Parent juego(Stage primaryStage) {
 
 
 private Pane enseñarPartida(Partida partida2) {
-	// TODO Auto-generated method stub
-	
-	//en vez de crear una clase para ello, es mas seguro
-	//hacerlo aqui mismo, ya que hasi el proceso esta accesible
-	//para las escenas de javaFx
-   
-	
+
+
 	Canvas canvas = new Canvas(60, 30);
 	GraphicsContext gc = canvas.getGraphicsContext2D();
 	
@@ -374,12 +342,15 @@ private Pane enseñarPartida(Partida partida2) {
 	
 	
 	
+	
     GameBrowser buscador = new GameBrowser(partida.getJuego()); 
-    buscador.setEditable(true); // con esto podemos editar las posiciones del tablero a mano
+    buscador.setEditable(true); 
 	 
    
+    
+    
     final SwingNode swingNode = new SwingNode();
-   swingNode.setContent(buscador);  //se adapta el componente Swing del tablero a JavaFx
+   swingNode.setContent(buscador); 
 
     
    TextField txtInformacion = new TextField();
@@ -401,8 +372,7 @@ private Pane enseñarPartida(Partida partida2) {
 
 
 private Parent pausa(Stage primaryStage) {
-	// TODO Auto-generated method stub
-	
+
 	grid = this.setBasePanel(primaryStage);
 	
 	Button button1= new Button("Continue");
@@ -448,7 +418,7 @@ private Parent pausa(Stage primaryStage) {
 
 
 private File abrirArchivos(Stage primaryStage) {
-	// TODO Auto-generated method stub
+
 	File selectedFile;
 	
 	FileChooser fileChooser = new FileChooser();
@@ -472,10 +442,6 @@ private File abrirArchivos(Stage primaryStage) {
 }
 
 
-
-//en caso de que se acceda a la variable desde distintas escenas
-//para evitar que se vuelva null al cambiar de escena 
-//tenemos que acceder con getter y seters sino las variables seran null
 
 
 public Partida getPartida() {

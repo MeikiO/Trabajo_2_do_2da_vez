@@ -31,22 +31,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity mux1 is
+entity verificador is
     Port ( derecha : in STD_LOGIC;
            izquierda : in STD_LOGIC;
            enviar : in STD_LOGIC;
            irt : out STD_LOGIC);
-end mux1;
+end verificador;
 
-architecture Behavioral of mux1 is
+architecture Behavioral of verificador is
 
-signal temp: std_logic;
 
 begin
 
-temp<= derecha or izquierda;
-
-irt<=enviar or temp;
+irt<=enviar or derecha or izquierda;
 
 
 end Behavioral;

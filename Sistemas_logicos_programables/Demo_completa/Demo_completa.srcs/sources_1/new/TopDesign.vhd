@@ -120,7 +120,7 @@ end component;
 end component;
 
 
-component mux1 is
+component verificador is
     Port ( derecha : in STD_LOGIC;
            izquierda : in STD_LOGIC;
            enviar : in STD_LOGIC;
@@ -173,7 +173,7 @@ signal sseg:std_logic_vector(6 downto 0);
 signal smandar,sirakurritakoa: std_logic_vector(7 downto 0);
 signal svalor: std_logic_vector(6 downto 0);
 
-signal sder,sizq,senviar,spulsado: std_logic;
+signal sder,sizq,senviar,smandado,spulsado: std_logic;
 
 begin
 
@@ -259,14 +259,24 @@ mandar =>smandar,
 enviar=>senviar
 );
 
+
  component10: button_debounce
+       port map(
+           clk  =>clk ,
+           reset =>reset ,
+           button_in  =>senviar ,
+           button_out => smandado
+           );
+
+
+ component11: button_debounce
         port map(
             clk  =>clk ,
             reset =>reset ,
             button_in  =>izq ,
             button_out => sizq
             );
- component11: button_debounce
+ component12: button_debounce
        port map(
            clk  =>clk ,
            reset =>reset ,
@@ -276,14 +286,14 @@ enviar=>senviar
            
 
 
-component12: mux1 
+component13: verificador 
     Port map( derecha =>sder,
            izquierda =>sizq,
-           enviar =>senviar,
+           enviar =>smandado,
            irt =>spulsado);
 
 
-component13: UART
+component14: UART
     port map(
             clk            => clk,
             reset          => reset,
@@ -294,7 +304,7 @@ component13: UART
             tx             => tx
             );
 
-component14: selector 
+component15: selector 
     Port map ( entrada =>sirakurritakoa,
            valor =>svalor );
 
