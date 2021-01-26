@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="C:/Users/mikel/Desktop/Demo_completa/Demo_completa.xpr">
+<Project Version="7" Minor="20" Path="C:/Users/Lenovo/Desktop/proyecto/producto/Sistemas_logicos_programables/Demo_completa/Demo_completa.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0178e4b35b564c3e81b7bbf06ae29fe2"/>

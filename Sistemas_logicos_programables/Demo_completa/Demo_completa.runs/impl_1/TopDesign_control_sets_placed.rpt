@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Jan 13 17:05:03 2021
-| Host         : LAPTOP-44GD87I2 running 64-bit major release  (build 9200)
+| Date         : Mon Jan 25 12:02:14 2021
+| Host         : LAPTOP-9KSG2A00 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopDesign_control_sets_placed.rpt
 | Design       : TopDesign
 | Device       : xc7a35t
@@ -48,10 +48,10 @@ Table of Contents
 +---------------------------------------------+-----------------------------------------------+------------------------------------------+------------------+----------------+
 |                 Clock Signal                |                 Enable Signal                 |             Set/Reset Signal             | Slice Load Count | Bel Load Count |
 +---------------------------------------------+-----------------------------------------------+------------------------------------------+------------------+----------------+
-|  component14/receiver/elementu_d_reg[1]_P_0 |                                               | component14/receiver/elementu_d_reg[1]_P |                1 |              1 |
-|  clk_IBUF_BUFG                              | component4/derecha                            | reset_IBUF                               |                1 |              1 |
 |  clk_IBUF_BUFG                              | component14/transmitter/baud_rate_clk_reg_n_0 | reset_IBUF                               |                1 |              1 |
+|  clk_IBUF_BUFG                              | component4/derecha                            | reset_IBUF                               |                1 |              1 |
 |  clk_IBUF_BUFG                              | component4/D[0]                               | reset_IBUF                               |                1 |              1 |
+|  component14/receiver/elementu_d_reg[1]_P_0 |                                               | component14/receiver/elementu_d_reg[1]_P |                1 |              1 |
 |  component15/elementu_d_reg[1]_P            |                                               | component15/elementu_d_reg[1]_C          |                1 |              1 |
 |  component3/izquierda_reg                   |                                               | reset_IBUF                               |                2 |              3 |
 |  clk_IBUF_BUFG                              | component14/receiver/bit_duration_count       | reset_IBUF                               |                2 |              4 |

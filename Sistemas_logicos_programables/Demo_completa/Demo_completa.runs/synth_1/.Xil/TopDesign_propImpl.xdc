@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/mikel/Desktop/Demo_completa/Demo_completa.srcs/constrs_1/new/constrains.xdc rfile:../../../Demo_completa.srcs/constrs_1/new/constrains.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/Lenovo/Desktop/proyecto/producto/Sistemas_logicos_programables/Demo_completa/Demo_completa.srcs/constrs_1/new/constrains.xdc rfile:../../../Demo_completa.srcs/constrs_1/new/constrains.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
